@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "../pages/Home";
-import Signup from "../pages/auth/Signup";
-import Login from "../pages/auth/Login";
+import Signup from "../pages/auth/CadastroVitma";
+import Login from "../pages/auth/LoginVitma";
 import ProtectedRoute from "../pages/auth/ProtectedRoute";
 import Navbar from "./Navbar";
 import Posts from "./forms/FormCadastroVitma";

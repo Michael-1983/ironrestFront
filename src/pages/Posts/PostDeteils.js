@@ -5,7 +5,7 @@ import api from "../../apis/api";
 
 import ConfirmationModal from "../../components/ConfirmationModal";
 
-function ProductDetail() {
+function PosttDetail() {
     const [productDetails, setProductDetails] = useState({
         name: "",
         manufacturer: "",
@@ -51,30 +51,30 @@ function ProductDetail() {
             </div>
 
             <p>
-                <strong>Nome do produto: </strong>
+                <strong>Nome: </strong>
                 {productDetails.name}
             </p>
             <p>
-                <strong>Fabricante: </strong>
+                <strong>idade: </strong>
                 {productDetails.manufacturer}
             </p>
             <p>
-                <strong>Preço de venda: </strong>
+                <strong>estado: </strong>
                 {productDetails.price.toLocaleString("pt-BR", {
                     currency: "BRL",
                     style: "currency",
                 })}
             </p>
             <p>
-                <strong>Qtd. em estoque: </strong>
+                <strong>Cidade: </strong>
                 {productDetails.inStock}
             </p>
             <p>
-                <strong>Categoria: </strong>
+                <strong>Descrição: </strong>
                 {productDetails.category}
             </p>
             <p>
-                <strong>Tags: </strong>
+                <strong>Imagem: </strong>
                 {productDetails.tags.join(", ")}
             </p>
 
@@ -95,4 +95,4 @@ function ProductDetail() {
     );
 }
 
-export default ProductDetail;
+export default PosttDetail;
