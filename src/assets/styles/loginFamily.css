@@ -1,0 +1,16 @@
+.loginFamilia {
+  font-size: 60px;
+  text-align: center;
+  margin-left: -71%;
+  margin-top: 5%;
+}
+.subtitle {
+  font-size: 20px;
+  margin-left: 8%;
+}
+.loginFamilia img {
+  vertical-align: middle;
+  width: 130px;
+  height: 120px;
+  border-radius: 50px;
+}

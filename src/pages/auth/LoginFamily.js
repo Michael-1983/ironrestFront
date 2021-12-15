@@ -2,8 +2,8 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
-import login from "../../assets/images/login.jpeg";
-import "../../assets/styles/loginVitima.css";
+import "../../assets/styles/loginFamily.css";
+import loginfamilia from "../../assets/images/familia.jfif";
 
 function Login(props) {
   const authContext = useContext(AuthContext);
@@ -22,10 +22,9 @@ function Login(props) {
       [event.currentTarget.name]: event.currentTarget.value,
     });
   }
-
   function handleclick(event) {
-    if (event.target.name === "user") {
-      return setState({ role: "USER" });
+    if (event.target.name === "admin") {
+      return setState({ role: "ADMIN" });
     }
   }
 
@@ -50,12 +49,12 @@ function Login(props) {
   }
 
   return (
-    <div className="loginVitima">
+    <div className="Familia">
       <form onSubmit={handleSubmit}>
-        <div className="stop">
-          <img src={login} alt="stop" />
+        <div className="loginFamilia">
+          <img src={loginfamilia} alt="Familia" />
         </div>
-        <h1 className="titleLogin">Conte aqui a sua história</h1>
+        <h1 className="subtitle">Acolha uma vítima</h1>
         <div className="btn">
           <div className="btn-login">
             <button className="btn btn-danger mt-3 " type="submit">
@@ -91,7 +90,7 @@ function Login(props) {
           </div>
 
           <button
-            name="user"
+            name="admin"
             onClick={handleclick}
             className="btn btn-light mt-3"
           >
