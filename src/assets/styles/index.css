@@ -1,12 +1,2 @@
 /* Seus estilos globais vão aqui */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
-
-*{
- font-family: 'Oswald', sans-serif; 
-  margin: 0px;
- }
- .container{
-     width: 75%;
-     padding: 1rem;
-     color: blue
- }
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
