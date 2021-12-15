@@ -28,7 +28,10 @@
         event.preventDefault();
 
         try {
-        const response = await api.post("/login", state);
+        const response = await api.post(
+          "http://localhost:4000/api/login-Vitma",
+          state
+        );
         console.log(response);
 
         authContext.setLoggedInUser({ ...response.data });
@@ -37,7 +40,7 @@
         JSON.stringify({ ...response.data })
         );
         setErrors({ password: "", email: "" });
-        navigate("/");
+        navigate("/home ");
         } catch (err) {
         console.error(err.response);
         setErrors({ ...err.response.data.errors });
@@ -57,7 +60,7 @@
             <div className="logo mt-3 ">
                   <img src="https://www.beauty-duesseldorf.com/cache/pica/2/0/5/3/5/269031478697200/icon_kontakt_portalfarbe_4-3.png" alt="logo" />
             </div>
-                <h1>Login</h1>
+                <h1>Entrar</h1>
             <div className="email mt-3">
             <label htmlFor="signupFormEmail" className="ml-3">E-mail:</label>
             <input
@@ -84,10 +87,10 @@
             <div className="btn">
             <div className="btn-login">
             <button className="btn btn-danger mt-3 " type="submit">Login</button>
-                  </div>
-            <button className="btn btn-danger ml-3 mt-3">
+             </div>
+            <span>
             <Link to="/signup">Não tem uma conta? Clique aqui para cadastrar!</Link>
-                  </button>
+                  </span>
            
                 </div>
             </form>

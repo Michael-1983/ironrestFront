@@ -1,7 +1,11 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-
+import Logout from "../pages/auth/Logout"
 import { AuthContext } from "../contexts/authContext";
+import { useHistory } from "react-router-dom";
+
+
+
 
 function Navbar() {
     const { loggedInUser, logout } = useContext(AuthContext);
@@ -9,7 +13,7 @@ function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-danger bg-danger text-white">
             <div className="container-fluid d-flex justify-content-between align-items-center text-light">
-                <NavLink className="navbar-brand " to="/">
+                <NavLink className="navbar-brand " to="/logout">
                     Projeto 3
                 </NavLink>
                 <button
@@ -62,7 +66,7 @@ function Navbar() {
                         <>
                             <span>Bem-vindo, {loggedInUser.user.name}</span>
 
-                            <button onClick={logout} className="btn btn-link">
+                            <button onClick={<Logout/>} className="btn btn-link">
                                 Sair
                             </button>
                         </>
