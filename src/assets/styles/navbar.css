@@ -1,0 +1,21 @@
+.Titulo {
+  font-size: 50px;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  margin-left: 35%;
+  color: darksalmon;
+}
+.Links {
+  margin-left: -150%;
+}
+.navbar {
+  background-color: rgb(105, 3, 105);
+}
+.navbar-nav {
+  margin-bottom: 0;
+  margin-left: -950%;
+  list-style: none;
+  align-content: stretch;
+  justify-content: space-around;
+  align-items: stretch;
+}
