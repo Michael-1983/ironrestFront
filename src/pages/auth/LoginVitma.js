@@ -5,7 +5,6 @@ import { AuthContext } from "../../contexts/authContext";
 import login from "../../assets/images/login.jpeg";
 import "../../assets/styles/loginVitima.css";
 
-
 function Login(props) {
   const authContext = useContext(AuthContext);
   const [state, setState] = useState({ password: "", email: "" });
@@ -28,14 +27,10 @@ function Login(props) {
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      const response = await api.post(
-        "/login-vitma",
-        state 
-     
-        );
-      navigate("/signup"); 
-      
-        console.log(response);
+      const response = await api.post("/login-vitma", state);
+      navigate("/signup");
+
+      console.log(response);
       authContext.setLoggedInUser({ ...response.data });
       localStorage.setItem(
         "loggedInUser",
@@ -57,7 +52,7 @@ function Login(props) {
         <h1 className="titleLogin">Conte aqui a sua história</h1>
         <div className="btn">
           <div className="btn-login">
-            <button className="btn btn-danger mt-3 " type="submit">
+            <button className="btnLogin mt-3 " type="submit">
               Login
             </button>
           </div>
@@ -87,13 +82,10 @@ function Login(props) {
               onChange={handleChange}
             />
           </div>
-          <button
-            name="user"
-            onClick={handleclick}
-            className="btn btn-light mt-3"
-          >
+
+          <button name="user" onClick={handleclick} className="btnClick mt-3">
             <Link to="/signup">
-              Não tem uma conta? Clique aqui para cadastrar!
+              Cadastre-se aqui e conte sua história de forma anônima!
             </Link>
           </button>
         </div>
