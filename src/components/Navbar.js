@@ -1,11 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-
-import "../assets/styles/navbar.css";
-
 import { AuthContext } from "../contexts/authContext";
 import "../assets/styles/navbar.css";
-
 
 function Navbar() {
   const { loggedInUser, logout } = useContext(AuthContext);
@@ -31,20 +27,20 @@ function Navbar() {
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
                 }
-                to="/lista-post"
+                to="/sobre"
               >
-                lista Posts
+                Sobre
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
+              <a
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
                 }
-                to="/login-familia"
+                href="https://receitas.globo.com"
               >
                 Disfarce
-              </NavLink>
+              </a>
             </li>
           </ul>
         </div>

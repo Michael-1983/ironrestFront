@@ -6,9 +6,11 @@ import login from "../../assets/images/login.jpeg";
 import "../../assets/styles/loginVitima.css";
 
 
+//login da vitma
 function Login(props) {
   const authContext = useContext(AuthContext);
   const [state, setState] = useState({ password: "", email: "" });
+
   const [errors, setErrors] = useState({
     email: null,
     password: null,
@@ -28,14 +30,10 @@ function Login(props) {
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      const response = await api.post(
-        "/login-vitma",
-        state 
-     
-        );
-      navigate("/signup"); 
-      
-        console.log(response);
+      const response = await api.post("/login-vitma", state);
+      navigate("/signup");
+
+      console.log(response);
       authContext.setLoggedInUser({ ...response.data });
       localStorage.setItem(
         "loggedInUser",
@@ -44,7 +42,7 @@ function Login(props) {
       setErrors({ password: "", email: "" });
       navigate("/signup");
     } catch (err) {
-      console.error(err.response);
+      console.errors(err.response);
       setErrors({ ...err.response.data.errors });
     }
   }
@@ -57,7 +55,7 @@ function Login(props) {
         <h1 className="titleLogin">Conte aqui a sua história</h1>
         <div className="btn">
           <div className="btn-login">
-            <button className="btn btn-danger mt-3 " type="submit">
+            <button className="btnLogin mt-3 " type="submit">
               Login
             </button>
           </div>
@@ -87,11 +85,8 @@ function Login(props) {
               onChange={handleChange}
             />
           </div>
-          <button
-            name="user"
-            onClick={handleclick}
-            className="btn btn-light mt-3"
-          >
+
+          <button name="user" onClick={handleclick} className="btnClick mt-3">
             <Link to="/signup">
               Cadastre-se aqui e conte sua história de forma anônima!
             </Link>
