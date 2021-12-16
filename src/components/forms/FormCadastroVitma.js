@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import FormField from "../../components/forms/FormField";
 import api from "../../apis/api";
-import FormField from "../../components/forms/FormField"
+import "../../assets/styles/cadastroFamilia.css";
 
-
-function Signup(props) {
+function CadastroVitma(props) {
   const [state, setState] = useState({
     name: "",
     nickName: "",
@@ -14,7 +14,6 @@ function Signup(props) {
     cidade: "",
     telefone: "",
     password: "",
-   
   });
 
   const [loading, setLoading] = useState(false);
@@ -27,7 +26,6 @@ function Signup(props) {
     cidade: null,
     telefone: null,
     password: null,
-    
   });
 
   const navigate = useNavigate();
@@ -42,35 +40,34 @@ function Signup(props) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-   
+    try {
+      setLoading(false);
+      const response = await api.post(
+        "http://localhost:4000/api/cadastra-vitma",
+        state
+      );
+      console.log(response);
 
-   try {
-     setLoading(false);
-     const response = await api.post(
-       "http://localhost:4000/api/cadastra-vitma",
-       state
-     );
-           console.log(response);
+      setLoading(true);
+      navigate("/login-vitma");
+    } catch (err) {
+      if (err.response) {
+        console.error(err.response);
+        return setErrors({ ...err.response.data.errors });
+      }
 
-    setLoading(true); 
-     navigate("/login");
-   } catch (err) {
-     if (err.response) {
-       console.error(err.response);
-       return setErrors({ ...err.response.data.errors });
-       
-     }
-
-     console.error(err);
+      console.error(err);
       setLoading(false);
     }
-    setErrors("O campo senha e confima senha são diferentes")
+    setErrors("O campo senha e confima senha são diferentes");
   }
 
   return (
     <div>
       <div className="container">
-        <h1>Junte-se</h1>
+        {/* cadastrando a vitma no sistema */}
+
+        <h1>Cadastrar Vitima</h1>
         <form onSubmit={handleSubmit}>
           <FormField
             label="Nome:"
@@ -168,8 +165,6 @@ function Signup(props) {
             readOnly={loading}
           />
 
-         
-
           <button
             disabled={loading}
             className="btn btn-danger mt-3"
@@ -184,15 +179,15 @@ function Signup(props) {
             ) : null}
             cadastrar
           </button>
-          <span>
-            <Link to="/login">
-              Already have an account? Click here to login.
+          <button className="btn btn-link">
+            <Link to="/login" className="">
+              Já tem uma conta? Clique aqui para entrar.
             </Link>
-          </span>
+          </button>
         </form>
       </div>
     </div>
   );
 }
 
-export default Signup;
+export default CadastroVitma;

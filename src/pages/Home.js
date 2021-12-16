@@ -1,17 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 import "../assets/styles/home.css";
-import Navbar from "../components/Navbar";
-import Login from "./auth/Login";
+import LoginVitma from "./auth/LoginVitma";
 import LoginFamily from "./auth/LoginFamily";
+import PostList from "./Posts/PostList"
+
 
 function Home() {
   return (
     <>
-      <Navbar />
-
-      <Login />
+    <div>
+      <PostList/>
+      
+      </div> 
+       <LoginVitma /> 
+ 
 
       <LoginFamily />
     </>

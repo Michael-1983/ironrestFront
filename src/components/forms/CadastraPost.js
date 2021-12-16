@@ -5,7 +5,7 @@ function PostCreat(){
        
           <div className="">
             {" "}
-            <h1>Cadastrar Post</h1>
+            <h1>Cadastre Seu Post</h1>
           </div>
           {/* Formulario de criacao do cadastro de familias */}
           <form>

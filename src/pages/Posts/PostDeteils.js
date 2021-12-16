@@ -3,17 +3,16 @@ import { useParams, useNavigate } from "react-router-dom";
 
 import api from "../../apis/api";
 
-import ConfirmationModal from "../../components/ConfirmationModal";
+import ConfirmationModal from "../../components/ConfimationModal";
 
 function PosttDetail() {
-    const [productDetails, setProductDetails] = useState({
-        name: "",
-        manufacturer: "",
-        price: 0,
-        inStock: 0,
-        pictureUrl: "",
-        category: "",
-        tags: [],
+    const [postDetails, setPostDetails] = useState({
+        sobrenome: "",
+        idade: "",
+        estado: "",
+        cidade: "",
+        descricao: "",
+       
     });
     const [showModal, setShowModal] = useState(false);
 
@@ -21,26 +20,22 @@ function PosttDetail() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        async function fetchProduct() {
+        async function fetchPost() {
             try {
-                const response = await api.get(`/product/${id}`);
+                const response = await api.get(`/detalhe-post/${id}`);
 
-                setProductDetails({ ...response.data });
+                setPostDetails({ ...response.data });
             } catch (err) {
                 console.error(err);
             }
         }
-        fetchProduct();
+        fetchPost();
     }, [id]);
 
     return (
         <div>
             <div className="img-container d-flex justify-content-between">
-                <img
-                    className="img-fluid mh-100"
-                    src={productDetails.pictureUrl}
-                    alt={productDetails.name}
-                />
+               
 
                 <div>
                     <button className="btn btn-warning me-2">Editar</button>
@@ -50,33 +45,27 @@ function PosttDetail() {
                 </div>
             </div>
 
-            <p>
+            <h3>
                 <strong>Nome: </strong>
-                {productDetails.name}
-            </p>
-            <p>
+                {postDetails.sobrenome}
+            </h3>
+            <h4>
                 <strong>idade: </strong>
-                {productDetails.manufacturer}
-            </p>
-            <p>
+                {postDetails.idade}
+            </h4>
+            <h4>
                 <strong>estado: </strong>
-                {productDetails.price.toLocaleString("pt-BR", {
-                    currency: "BRL",
-                    style: "currency",
-                })}
-            </p>
-            <p>
+                {postDetails.estado}
+            </h4>
+            <h4>
                 <strong>Cidade: </strong>
-                {productDetails.inStock}
-            </p>
-            <p>
+                {postDetails.cidade}
+            </h4>
+            <h4>
                 <strong>Descrição: </strong>
-                {productDetails.category}
-            </p>
-            <p>
-                <strong>Imagem: </strong>
-                {productDetails.tags.join(", ")}
-            </p>
+                {postDetails.descricao}
+            </h4>
+           
 
             <ConfirmationModal
                 title="Tem certeza?"
@@ -85,11 +74,11 @@ function PosttDetail() {
                 show={showModal}
                 handleClose={() => setShowModal(false)}
                 handleConfirmation={() => {
-                    navigate(`/product/delete/${id}`);
+                    navigate(`/delete-post/${id}`);
                     setShowModal(false);
                 }}
             >
-                Essa ação é irreversível
+                Tem certeza que quer deletar?
             </ConfirmationModal>
         </div>
     );
