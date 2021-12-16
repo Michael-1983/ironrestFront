@@ -1,5 +1,5 @@
 .link-cadastro{
-    text-color:white;
+    color:white;
     text-decoration: none;
     display: inline-block;
     border: 1px solid black;
@@ -11,6 +11,4 @@
     flex-direction: column;
 }
 
-    .spinner-border{
-
-    }
+    
