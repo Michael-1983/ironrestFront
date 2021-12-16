@@ -36,45 +36,36 @@ function Login(props) {
       const response = await api.post("/login", state);
       console.log(response);
 
-        async function handleSubmit(event) {
-        event.preventDefault();
-
-        try {
-        const response = await api.post(
-          "http://localhost:4000/api/login-Vitma",
-          state
-        );
-        console.log(response);
-
-        authContext.setLoggedInUser({ ...response.data });
-        localStorage.setItem(
+      authContext.setLoggedInUser({ ...response.data });
+      localStorage.setItem(
         "loggedInUser",
         JSON.stringify({ ...response.data })
-        );
-        setErrors({ password: "", email: "" });
-        navigate("/home ");
-        } catch (err) {
-        console.error(err.response);
-        setErrors({ ...err.response.data.errors });
-        }
-        }
+      );
+      setErrors({ password: "", email: "" });
+      navigate("/");
+    } catch (err) {
+      console.error(err.response);
+      setErrors({ ...err.response.data.errors });
+    }
+  }
 
-      return (
-
-
-      <div className="container-fluid  d-block justify-content-start">
-            <div className="row">
-                 <div className="col-6">
-            
-            
-            <form onSubmit={handleSubmit}>
-           
-            <div className="logo mt-3 ">
-                  <img src="https://www.beauty-duesseldorf.com/cache/pica/2/0/5/3/5/269031478697200/icon_kontakt_portalfarbe_4-3.png" alt="logo" />
-            </div>
-                <h1>Entrar</h1>
-            <div className="email mt-3">
-            <label htmlFor="signupFormEmail" className="ml-3">E-mail:</label>
+  return (
+    <div className="loginVitima">
+      <form onSubmit={handleSubmit}>
+        <div className="stop">
+          <img src={login} alt="stop" />
+        </div>
+        <h1 className="titleLogin">Conte aqui a sua história</h1>
+        <div className="btn">
+          <div className="btn-login">
+            <button className="btnLogin mt-3 " type="submit">
+              Login
+            </button>
+          </div>
+          <div className="email mt-3">
+            <label htmlFor="signupFormEmail" className="ml-3">
+              E-mail:
+            </label>
             <input
               type="email"
               name="email"
@@ -99,20 +90,15 @@ function Login(props) {
             />
           </div>
 
-          <button
-            name="user"
-            onClick={handleclick}
-            className="btn btn-light mt-3"
-          >
+          <button name="user" onClick={handleclick} className="btnClick mt-3">
             <Link to="/signup">
-              Não tem uma conta? Clique aqui para cadastrar!
+              Cadastre-se aqui e conte sua história de forma anônima!
             </Link>
           </button>
         </div>
       </form>
-      
     </div>
   );
 }
 
-export default login;
+export default Login;

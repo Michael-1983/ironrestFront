@@ -54,10 +54,10 @@ function Login(props) {
         <div className="loginFamilia">
           <img src={loginfamilia} alt="Familia" />
         </div>
-        <h1 className="subtitle">Acolha uma vítima</h1>
+        <h1 className="subtitle">Acolha uma vítima de violência doméstica</h1>
         <div className="btn">
           <div className="btn-login">
-            <button className="btn btn-danger mt-3 " type="submit">
+            <button className="btnLogin mt-3 " type="submit">
               Login
             </button>
           </div>
@@ -89,11 +89,7 @@ function Login(props) {
             />
           </div>
 
-          <button
-            name="admin"
-            onClick={handleclick}
-            className="btn btn-light mt-3"
-          >
+          <button name="admin" onClick={handleclick} className="btnClick mt-3">
             <Link to="/signup">
               Não tem uma conta? Clique aqui para cadastrar!
             </Link>

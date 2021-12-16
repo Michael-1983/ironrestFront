@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "../pages/Home";
-import Signup from "../pages/auth/CadastroVitma";
+import CadastroVitma from "../components/forms/FormCadastroVitma";
 import Login from "../pages/auth/LoginVitma";
 import ProtectedRoute from "../pages/auth/ProtectedRoute";
-import Navbar from "./Navbar";
 import Posts from "./forms/FormCadastroVitma";
 import { AuthContextComponent } from "../contexts/authContext";
+import Sobre from "../components/Sobre";
 
 function App() {
   return (
@@ -14,9 +14,10 @@ function App() {
       <AuthContextComponent>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<CadastroVitma />} />
           <Route path="/login" element={<Login />} />
           <Route path="/post" element={<ProtectedRoute component={Posts} />} />
+          <Route path="/sobre" element={<Sobre />} />
         </Routes>
       </AuthContextComponent>
     </div>

@@ -1,17 +1,16 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-
 import { AuthContext } from "../contexts/authContext";
-import "../assets/styles/navbar.css";
-import { Container } from "react-bootstrap";
+import "../assets/styles/navbarPaginas.css";
+import IconeHome from "../../src/assets/images/pngtree-home-vector-icon-png-image_4070025.jpg";
 
-function Navbar() {
+function NavbarPaginas() {
   const { loggedInUser, logout } = useContext(AuthContext);
 
   return (
-    <nav className="navbar">
+    <nav className="navbarP">
       <div className="container">
-        <h1 className="Titulo">Marias da Penha</h1>
+        <h1 className="TituloP">Marias da Penha</h1>
         <button
           className="navbar-toggler"
           data-bs-toggle="collapse"
@@ -22,8 +21,8 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="Links" id="navbarNav">
-          <ul className="navbar-nav">
+        <div className="LinksP" id="navbarNav">
+          <ul className="navbar-navP">
             <li className="nav-item"></li>
             <li className="nav-item">
               <NavLink
@@ -32,7 +31,7 @@ function Navbar() {
                 }
                 to="/sobre"
               >
-                Sobre
+                <img src={IconeHome} alt="home" />
               </NavLink>
             </li>
             <li className="nav-item">
@@ -72,4 +71,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavbarPaginas;
