@@ -62,6 +62,8 @@ function CadastroFamilia(props) {
   }
 
   return (
+
+    // cadastrando as familias que vão ajudar as vitmas
     <div>
       <div className="container">
         <h1>Ajude as vitmas de violência</h1>
@@ -166,7 +168,7 @@ function CadastroFamilia(props) {
             cadastrar
           </button>
           <span>
-            <Link to="/login">
+            <Link to="/login" className="link-cadastro">
               Already have an account? Click here to login.
             </Link>
           </span>

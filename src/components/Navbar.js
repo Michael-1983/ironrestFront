@@ -1,15 +1,14 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import Logout from "../pages/auth/Logout"
 import { AuthContext } from "../contexts/authContext";
-import { useHistory } from "react-router-dom";
+import "../assets/styles/navbar.css";
+
 
 
 
 
 function Navbar() {
   const { loggedInUser, logout } = useContext(AuthContext);
-
   return (
     <nav className="navbar">
       <div className="container">
@@ -32,9 +31,9 @@ function Navbar() {
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
                 }
-                to="/post/create"
+                to="/lista-post"
               >
-                Posts
+                lista Posts
               </NavLink>
             </li>
             <li className="nav-item">
@@ -42,7 +41,7 @@ function Navbar() {
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
                 }
-                to="/product/list"
+                to="/login-familia"
               >
                 Suporte
               </NavLink>
@@ -53,7 +52,6 @@ function Navbar() {
           {loggedInUser.user._id ? (
             <>
               <span>Bem-vindo, {loggedInUser.user.name}</span>
-
               <button onClick={logout} className="btn btn-link">
                 Sair
               </button>
@@ -73,5 +71,4 @@ function Navbar() {
     </nav>
   );
 }
-
 export default Navbar;
