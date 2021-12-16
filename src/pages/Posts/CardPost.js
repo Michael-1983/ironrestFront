@@ -1,37 +1,21 @@
 import { Link } from "react-router-dom";
 
-function ProductCard(props) {
+function CardPost(props) {
     return (
-        <Link
-            to={`/post/${props._id}`}
-            className="list-group-item list-group-item-action"
-            aria-current="true"
-        >
-            <div className="row">
-                <div className="col-2">
-                    <div className="img-container">
-                        <img
-                            className="img-fluid mh-100"
-                            src={props.pictureUrl}
-                            alt={props.name}
-                        />
-                    </div>
-                </div>
-                <div className="col-10">
-                    <div className="d-flex w-100 justify-content-between mb-1">
-                        <h5 className="mb-1">{props.name}</h5>
-                        <small>
-                            {props.price.toLocaleString("pt-BR", {
-                                style: "currency",
-                                currency: "BRL",
-                            })}
-                        </small>
-                    </div>
-                    <small>{props.manufacturer}</small>
-                </div>
-            </div>
-        </Link>
+      <div class="card" style={{ width: "18rem", height: "18rem" }}>
+        
+        <div class="card-body">
+          <h2 class="card-title">{props.sobrenome}</h2>
+          <h3> {props.sobrenome} </h3>
+          <h3> {props.idade} </h3>
+          <h3> {props.estado} </h3>
+          <h3> {props.cidade} </h3>
+          <p class="card-text">{props.descricao}</p>
+          <Link href="/lista-post" class="btn btn-primary" />
+          Ver Lista
+        </div>
+      </div>
     );
 }
 
-export default ProductCard;
+export default CardPost;

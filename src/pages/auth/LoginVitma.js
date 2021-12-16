@@ -7,48 +7,42 @@ import "../../assets/styles/loginVitima.css";
 
 function Login(props) {
   const authContext = useContext(AuthContext);
-
   const [state, setState] = useState({ password: "", email: "" });
   const [errors, setErrors] = useState({
     email: null,
     password: null,
   });
-
   const navigate = useNavigate();
-
   function handleChange(event) {
     setState({
       ...state,
       [event.currentTarget.name]: event.currentTarget.value,
     });
   }
-
   function handleclick(event) {
     if (event.target.name === "user") {
       return setState({ role: "USER" });
     }
   }
-
   async function handleSubmit(event) {
     event.preventDefault();
-
     try {
-      const response = await api.post("/login", state);
-      console.log(response);
+      const response = await api.post("/login-vitma", state);
+      navigate("/signup");
 
+      console.log(response);
       authContext.setLoggedInUser({ ...response.data });
       localStorage.setItem(
         "loggedInUser",
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      navigate("/");
+      navigate("/signup");
     } catch (err) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });
     }
   }
-
   return (
     <div className="loginVitima">
       <form onSubmit={handleSubmit}>
@@ -75,7 +69,6 @@ function Login(props) {
               onChange={handleChange}
             />
           </div>
-
           <div className="senha mt-3">
             <label htmlFor="signupFormPassword" className="ml-3">
               Senha:{" "}
@@ -100,5 +93,4 @@ function Login(props) {
     </div>
   );
 }
-
 export default Login;

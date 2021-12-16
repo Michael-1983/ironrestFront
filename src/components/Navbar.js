@@ -1,13 +1,10 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-
 import { AuthContext } from "../contexts/authContext";
 import "../assets/styles/navbar.css";
-import { Container } from "react-bootstrap";
 
 function Navbar() {
   const { loggedInUser, logout } = useContext(AuthContext);
-
   return (
     <nav className="navbar">
       <div className="container">
@@ -36,14 +33,14 @@ function Navbar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
+              <a
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
                 }
-                to="https://https://receitas.globo.com/"
+                href="https://receitas.globo.com"
               >
                 Disfarce
-              </NavLink>
+              </a>
             </li>
           </ul>
         </div>
@@ -51,7 +48,6 @@ function Navbar() {
           {loggedInUser.user._id ? (
             <>
               <span>Bem-vindo, {loggedInUser.user.name}</span>
-
               <button onClick={logout} className="btn btn-link">
                 Sair
               </button>
@@ -71,5 +67,4 @@ function Navbar() {
     </nav>
   );
 }
-
 export default Navbar;

@@ -5,6 +5,10 @@ import { AuthContext } from "../../contexts/authContext";
 import "../../assets/styles/loginFamily.css";
 import loginfamilia from "../../assets/images/familia.jfif";
 
+
+
+
+
 function Login(props) {
   const authContext = useContext(AuthContext);
 
@@ -32,7 +36,11 @@ function Login(props) {
     event.preventDefault();
 
     try {
-      const response = await api.post("/login", state);
+      const response = await api.post("/login-familia",
+        state
+      );
+     navigate("/perfil-familia"); 
+       
       console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });
@@ -41,7 +49,7 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      navigate("/");
+      navigate("/login");
     } catch (err) {
       console.error(err.response);
       setErrors({ ...err.response.data.errors });

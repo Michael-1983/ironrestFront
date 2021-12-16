@@ -1,10 +1,144 @@
-import FormVitma from "../../components/forms/FormCadastroVitma"
+import { useState } from "react";
 
-function CriaPost(){
+import FormField from "../../components/forms/FormField";
 
-    return(
-     <div className="container">
-         <FormVitma/>
+import api from "../../apis/api";
+
+function PostCreate() {
+  const [posts, setPosts] = useState({
+    sobrenome: "",
+    idade: "",
+    estado: "",
+    cidade:"",
+    descricao:"",
+   
+  });
+  const [loading, setLoading] = useState(false);
+
+  function handleChange(e) {
+    if (e.target.files) {
+      return setPosts({
+        ...posts,
+        [e.target.name]: e.target.files[0],
+      });
+    }
+
+    setPosts({ ...posts, [e.target.name]: e.target.value });
+  }
+
+  
+
+  
+
+      
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+
+     
+
+      const response = await api.post(
+        "/cadastro-post",
+        {
+          ...posts,
+          
+        }
+      );
+
+      console.log(response);
+      setLoading(false);
+    } catch (err) {
+      console.error(err);
+      setLoading(false);
+    }
+  }
+
+  return (
+    <div className="container mb-5 p-5">
+      <div className="col-8">
+        <h1>Post</h1>
+        <form onSubmit={handleSubmit}>
+          <FormField
+            label="Sobrenome"
+            id="postFormName"
+            name="sobrenome"
+            onChange={handleChange}
+            value={posts.sobrenome}
+            required
+            readOnly={loading}
+          />
+
+          <FormField
+            label="Idade"
+            id="productFormManufacturer"
+            name="idade"
+            onChange={handleChange}
+            value={posts.idade}
+            required
+            readOnly={loading}
+          />
+
+          <FormField
+            type="text"
+            label="Estado"
+            id="postEstado"
+            name="estado"
+            onChange={handleChange}
+            value={posts.estado}
+            required
+            readOnly={loading}
+          />
+
+          <FormField
+            type="text"
+            label="Cidade"
+            id="postCidade"
+            name="cidade"
+            onChange={handleChange}
+            value={posts.cidade}
+            required
+            readOnly={loading}
+          />
+          <div className="col-12">
+            <textArea
+              label="Conteudo"
+              id="textConteudo"
+              name="descricao"
+              cols={84}
+              rows={4}
+              onChange={handleChange}
+              value={posts.descricao}
+              required
+              readOnly={loading}
+            />
+          </div>
+
+          <div className="mb-3 text-right">
+            <button
+              disabled={loading}
+              type="submit"
+              className="btn btn-primary"
+            >
+              {loading ? (
+                <>
+                  <span
+                    className="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>{" "}
+                  <span>Carregando...</span>{" "}
+                </>
+              ) : (
+                "Criar "
+              )}
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-    )
+  );
 }
+export default PostCreate;

@@ -4,15 +4,16 @@ import Home from "../pages/Home";
 import CadastroVitma from "../components/forms/FormCadastroVitma";
 import Login from "../pages/auth/LoginVitma";
 import ProtectedRoute from "../pages/auth/ProtectedRoute";
-import Posts from "./forms/FormCadastroVitma";
 import { AuthContextComponent } from "../contexts/authContext";
-import Sobre from "../components/Sobre";
+import Posts from "../pages/auth/Posts";
+import Sobre from "./Sobre";
 
 function App() {
   return (
     <div className="background">
       <AuthContextComponent>
         <Routes>
+          <Route path="/post" element={<Posts />} />
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<CadastroVitma />} />
           <Route path="/login" element={<Login />} />
@@ -23,5 +24,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

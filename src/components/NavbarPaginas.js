@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../contexts/authContext";
-import "../assets/styles/navbarPaginas.css";
-import IconeHome from "../../src/assets/images/pngtree-home-vector-icon-png-image_4070025.jpg";
+import "../assets/styles/sobre.css";
+import IconeHome from "../../src/assets/images/home.png";
 
 function NavbarPaginas() {
   const { loggedInUser, logout } = useContext(AuthContext);
