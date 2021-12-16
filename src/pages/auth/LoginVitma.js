@@ -31,18 +31,23 @@ function Login(props) {
     event.preventDefault();
     try {
       const response = await api.post("/login-vitma", state);
-      navigate("/signup");
+      navigate("/signu");
 
       console.log(response);
+
+
+
       authContext.setLoggedInUser({ ...response.data });
       localStorage.setItem(
         "loggedInUser",
+
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
       navigate("/signup");
     } catch (err) {
-      console.errors(err.response);
+
+     // console.errors(err.response);
       setErrors({ ...err.response.data.errors });
     }
   }
