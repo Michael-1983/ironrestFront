@@ -1,18 +1,16 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-
-import "../assets/styles/navbar.css";
-
 import { AuthContext } from "../contexts/authContext";
-import "../assets/styles/navbar.css";
+import "../assets/styles/navbarPaginas.css";
+import IconeHome from "../../src/assets/images/pngtree-home-vector-icon-png-image_4070025.jpg";
 
-
-function Navbar() {
+function NavbarPaginas() {
   const { loggedInUser, logout } = useContext(AuthContext);
+
   return (
-    <nav className="navbar">
+    <nav className="navbarP">
       <div className="container">
-        <h1 className="Titulo">Marias da Penha</h1>
+        <h1 className="TituloP">Marias da Penha</h1>
         <button
           className="navbar-toggler"
           data-bs-toggle="collapse"
@@ -23,17 +21,17 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="Links" id="navbarNav">
-          <ul className="navbar-nav">
+        <div className="LinksP" id="navbarNav">
+          <ul className="navbar-navP">
             <li className="nav-item"></li>
             <li className="nav-item">
               <NavLink
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
                 }
-                to="/lista-post"
+                to="/sobre"
               >
-                lista Posts
+                <img src={IconeHome} alt="home" />
               </NavLink>
             </li>
             <li className="nav-item">
@@ -41,7 +39,7 @@ function Navbar() {
                 className={({ isActive }) =>
                   `nav-link ${isActive ? "active" : ""}`
                 }
-                to="/login-familia"
+                to="https://https://receitas.globo.com/"
               >
                 Disfarce
               </NavLink>
@@ -52,6 +50,7 @@ function Navbar() {
           {loggedInUser.user._id ? (
             <>
               <span>Bem-vindo, {loggedInUser.user.name}</span>
+
               <button onClick={logout} className="btn btn-link">
                 Sair
               </button>
@@ -71,4 +70,5 @@ function Navbar() {
     </nav>
   );
 }
-export default Navbar;
+
+export default NavbarPaginas;

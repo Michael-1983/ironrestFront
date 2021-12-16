@@ -93,7 +93,7 @@ function Login(props) {
             className="btn btn-light mt-3"
           >
             <Link to="/signup">
-              Não tem uma conta? Clique aqui para cadastrar!
+              Cadastre-se aqui e conte sua história de forma anônima!
             </Link>
           </button>
         </div>
