@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import {useNavigate} from "react-router-dom";
 import FormField from "../../components/forms/FormField";
 
 import api from "../../apis/api";
@@ -14,7 +14,7 @@ function PostCreate() {
    
   });
   const [loading, setLoading] = useState(false);
-
+ const navigate = useNavigate();
   function handleChange(e) {
     if (e.target.files) {
       return setPosts({
@@ -26,9 +26,6 @@ function PostCreate() {
     setPosts({ ...posts, [e.target.name]: e.target.value });
   }
 
-  
-
-  
 
       
 
@@ -47,8 +44,11 @@ function PostCreate() {
           
         }
       );
-
-      console.log(response);
+    navigate("/")
+     
+    
+    
+    console.log(response);
       setLoading(false);
     } catch (err) {
       console.error(err);
@@ -57,7 +57,7 @@ function PostCreate() {
   }
 
   return (
-    <div className="container mb-5 p-5">
+    <div className="container  cadastros mb-5 p-5">
       <div className="col-8">
         <h1>Post</h1>
         <form onSubmit={handleSubmit}>
@@ -120,7 +120,7 @@ function PostCreate() {
             <button
               disabled={loading}
               type="submit"
-              className="btn btn-primary"
+              className="btn botoes"
             >
               {loading ? (
                 <>

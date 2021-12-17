@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 import CardPost from "./CardPost";
-
 import api from "../../apis/api";
 
 function PostList() {
@@ -21,11 +20,12 @@ function PostList() {
   }, []);
 
   return (
-    <div>
-      <div className="list-group">
+    <div className="container ">
+      <div className="list-group lista-posts">
         {postList.map((currentPostObj) => (
           <CardPost key={currentPostObj._id} {...currentPostObj} />
         ))}
+       
       </div>
     </div>
   );

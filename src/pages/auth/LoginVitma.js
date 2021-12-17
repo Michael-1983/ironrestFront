@@ -6,11 +6,9 @@ import login from "../../assets/images/login.jpeg";
 import "../../assets/styles/loginVitima.css";
 
 
-//login da vitma
 function Login(props) {
   const authContext = useContext(AuthContext);
   const [state, setState] = useState({ password: "", email: "" });
-
   const [errors, setErrors] = useState({
     email: null,
     password: null,
@@ -27,30 +25,36 @@ function Login(props) {
       return setState({ role: "USER" });
     }
   }
+
+
+
   async function handleSubmit(event) {
     event.preventDefault();
+   
+   
     try {
-      const response = await api.post("/login-vitma", state);
-      navigate("/signu");
-
-      console.log(response);
-
-
-
+      const response = await api.post(
+        "/login-vitma",
+        {...state} 
+     
+        );
+      navigate("/"); 
+      
+        console.log(response);
       authContext.setLoggedInUser({ ...response.data });
       localStorage.setItem(
         "loggedInUser",
-
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      navigate("/signup");
+      navigate("/");
     } catch (err) {
-
-     // console.errors(err.response);
-      setErrors({ ...err.response.data.errors });
-    }
-  }
+      if (err.response) {
+ 
+        setErrors({...err.response.data.errors});
+        console.log(err.response)
+} 
+    }}
   return (
     <div className="loginVitima">
       <form onSubmit={handleSubmit}>
@@ -78,9 +82,7 @@ function Login(props) {
             />
           </div>
           <div className="senha mt-3">
-            <label htmlFor="signupFormPassword" className="ml-3">
-              Senha:{" "}
-            </label>
+           
             <input
               type="password"
               name="password"
@@ -92,7 +94,7 @@ function Login(props) {
           </div>
 
           <button name="user" onClick={handleclick} className="btnClick mt-3">
-            <Link to="/signup">
+            <Link to="/cadastra-vitma">
               Cadastre-se aqui e conte sua história de forma anônima!
             </Link>
           </button>

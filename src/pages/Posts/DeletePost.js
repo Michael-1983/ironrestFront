@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 
 function PostDelete() {
+    
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -11,7 +12,7 @@ function PostDelete() {
         async function deletePost() {
             try {
                 await api.delete(`/dele-post${id}`);
-                navigate("/lista-post");
+                navigate("/post");
             } catch (err) {
                 console.error(err);
             }

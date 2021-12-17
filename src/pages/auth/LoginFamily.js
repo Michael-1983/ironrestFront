@@ -4,7 +4,7 @@ import api from "../../apis/api";
 import { AuthContext } from "../../contexts/authContext";
 import "../../assets/styles/loginFamily.css";
 import loginfamilia from "../../assets/images/familia.jfif";
-
+import NavbarPaginas from "../../components/NavbarPaginas";
 
 
 
@@ -49,61 +49,68 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      navigate("/login");
+      navigate("/home");
     } catch (err) {
       console.error(err.response);
-      setErrors({ ...err.response.data.errors });
+     
     }
   }
 
   return (
-    <div className="Familia">
-      <form onSubmit={handleSubmit}>
-        <div className="loginFamilia">
-          <img src={loginfamilia} alt="Familia" />
-        </div>
-        <h1 className="subtitle">Acolha uma vítima de violência doméstica</h1>
-        <div className="btn">
-          <div className="btn-login">
-            <button className="btnLogin mt-3 " type="submit">
-              Login
+    <div>
+      <NavbarPaginas/>
+      <div className="Familia">
+        <form onSubmit={handleSubmit}>
+          <div className="loginFamilia">
+            <img src={loginfamilia} alt="Familia" />
+          </div>
+          <h1 className="subtitle">Acolha uma vítima de violência doméstica</h1>
+          <div className="btn">
+            <div className="btn-login">
+              <button className="btnLogin mt-3 " type="submit">
+                Login
+              </button>
+            </div>
+            <div className="email mt-3">
+              <label htmlFor="signupFormEmail" className="ml-3">
+                E-mail:
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="signupFormEmail"
+                value={state.email}
+                error={errors.email}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="senha mt-3">
+              <label htmlFor="signupFormPassword" className="ml-3">
+                Senha:{" "}
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="signupFormPassword"
+                value={state.password}
+                error={errors.password}
+                onChange={handleChange}
+              />
+            </div>
+
+            <button
+              name="admin"
+              onClick={handleclick}
+              className="btnClick mt-3"
+            >
+              <Link to="/cadastra-familia">
+                Não tem uma conta? Clique aqui para cadastrar!
+              </Link>
             </button>
           </div>
-          <div className="email mt-3">
-            <label htmlFor="signupFormEmail" className="ml-3">
-              E-mail:
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="signupFormEmail"
-              value={state.email}
-              error={errors.email}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="senha mt-3">
-            <label htmlFor="signupFormPassword" className="ml-3">
-              Senha:{" "}
-            </label>
-            <input
-              type="password"
-              name="password"
-              id="signupFormPassword"
-              value={state.password}
-              error={errors.password}
-              onChange={handleChange}
-            />
-          </div>
-
-          <button name="admin" onClick={handleclick} className="btnClick mt-3">
-            <Link to="/signup">
-              Não tem uma conta? Clique aqui para cadastrar!
-            </Link>
-          </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }

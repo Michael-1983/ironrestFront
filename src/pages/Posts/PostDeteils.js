@@ -39,7 +39,7 @@ function PosttDetail() {
 
                 <div>
                     <button className="btn btn-warning me-2">Editar</button>
-                    <button className="btn btn-danger" onClick={() => setShowModal(true)}>
+                    <button className="btn-delete" onClick={() => setShowModal(true)}>
                         Deletar
                     </button>
                 </div>

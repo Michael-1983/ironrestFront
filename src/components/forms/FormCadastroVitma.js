@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import FormField from "../../components/forms/FormField";
 import api from "../../apis/api";
-import "../../assets/styles/cadastroFamilia.css";
+import "../../assets/styles/cadastros.css";
+import NavbarPaginas from "../NavbarPaginas"
+
 
 function CadastroVitma(props) {
   const [state, setState] = useState({
@@ -43,13 +45,13 @@ function CadastroVitma(props) {
     try {
       setLoading(false);
       const response = await api.post(
-        "http://localhost:4000/api/cadastra-vitma",
+        "/cadastra-vitma",
         state
       );
       console.log(response);
 
       setLoading(true);
-      navigate("/login-vitma");
+      navigate("/");
     } catch (err) {
       if (err.response) {
         console.error(err.response);
@@ -64,127 +66,129 @@ function CadastroVitma(props) {
 
   return (
     <div>
-      <div className="container">
-        {/* cadastrando a vitma no sistema */}
+      <NavbarPaginas />
 
-        <h1>Cadastrar Vitima</h1>
-        <form onSubmit={handleSubmit}>
-          <FormField
-            label="Nome:"
-            type="text"
-            name="name"
-            required
-            id="signupFormName"
-            value={state.name}
-            error={errors.name}
-            onChange={handleChange}
-            readOnly={loading}
-          />
+      <div>
+        <div className="container div-cadastros">
+          <div className="col-8">
+            {/* cadastrando a vitma no sistema */}
 
-          <FormField
-            label="Nickname:"
-            type="text"
-            name="nickName"
-            required
-            id="signupFormNickName"
-            error={errors.nickName}
-            onChange={handleChange}
-            value={state.nickName}
-            readOnly={loading}
-          />
+            <h3>Cadastrar</h3>
+            <form onSubmit={handleSubmit}>
+              <FormField
+                label="Nome:"
+                type="text"
+                name="name"
+                required
+                id="signupFormName"
+                value={state.name}
+                error={errors.name}
+                onChange={handleChange}
+                readOnly={loading}
+              />
 
-          <FormField
-            label="Idade:"
-            type="number"
-            name="idade"
-            required
-            id="signupForIdade"
-            value={state.idade}
-            error={errors.idade}
-            onChange={handleChange}
-            readOnly={loading}
-          />
+              <FormField
+                label="Nickname:"
+                type="text"
+                name="nickName"
+                required
+                id="signupFormNickName"
+                error={errors.nickName}
+                onChange={handleChange}
+                value={state.nickName}
+                readOnly={loading}
+              />
 
-          <FormField
-            label="Email:"
-            type="email"
-            name="email"
-            required
-            id="signupFormEmail"
-            value={state.email}
-            error={errors.email}
-            onChange={handleChange}
-            readOnly={loading}
-          />
+              <FormField
+                label="Idade:"
+                type="number"
+                name="idade"
+                required
+                id="signupForIdade"
+                value={state.idade}
+                error={errors.idade}
+                onChange={handleChange}
+                readOnly={loading}
+              />
 
-          <FormField
-            label="Estado:"
-            type="text"
-            name="estado"
-            required
-            id="signupFormEstado"
-            error={errors.estado}
-            onChange={handleChange}
-            value={state.estado}
-            readOnly={loading}
-          />
+              <FormField
+                label="Email:"
+                type="email"
+                name="email"
+                required
+                id="signupFormEmail"
+                value={state.email}
+                error={errors.email}
+                onChange={handleChange}
+                readOnly={loading}
+              />
 
-          <FormField
-            label="Cidade:"
-            type="text"
-            name="cidade"
-            required
-            id="signupFormCidade"
-            error={errors.cidade}
-            onChange={handleChange}
-            value={state.cidade}
-            readOnly={loading}
-          />
+              <FormField
+                label="Estado:"
+                type="text"
+                name="estado"
+                required
+                id="signupFormEstado"
+                error={errors.estado}
+                onChange={handleChange}
+                value={state.estado}
+                readOnly={loading}
+              />
 
-          <FormField
-            label="Telefone:"
-            type="text"
-            name="telefone"
-            required
-            id="signupFormTelefone"
-            error={errors.telefone}
-            onChange={handleChange}
-            value={state.telefone}
-            readOnly={loading}
-          />
+              <FormField
+                label="Cidade:"
+                type="text"
+                name="cidade"
+                required
+                id="signupFormCidade"
+                error={errors.cidade}
+                onChange={handleChange}
+                value={state.cidade}
+                readOnly={loading}
+              />
 
-          <FormField
-            label="Senha:"
-            type="password"
-            name="password"
-            required
-            id="signupFormPassword"
-            error={errors.password}
-            onChange={handleChange}
-            value={state.password}
-            readOnly={loading}
-          />
+              <FormField
+                label="Telefone:"
+                type="text"
+                name="telefone"
+                required
+                id="signupFormTelefone"
+                error={errors.telefone}
+                onChange={handleChange}
+                value={state.telefone}
+                readOnly={loading}
+              />
 
-          <button
-            disabled={loading}
-            className="btn btn-danger mt-3"
-            type="submit"
-          >
-            {loading ? (
-              <span
-                className="spinner-border spinner-border-sm me-2"
-                role="status"
-                aria-hidden="true"
-              ></span>
-            ) : null}
-            cadastrar
-          </button>
-          <button className="btn btn-link">
-            <Link to="/login" className="">
-              Já tem uma conta? Clique aqui para entrar.
-            </Link>
-          </button>
-        </form>
+              <FormField
+                label="Senha:"
+                type="password"
+                name="password"
+                required
+                id="signupFormPassword"
+                error={errors.password}
+                onChange={handleChange}
+                value={state.password}
+                readOnly={loading}
+              />
+
+              <button
+                disabled={loading}
+                className="btn  mt-3 botoes"
+                type="submit"
+              >
+                {loading ? (
+                  <span
+                    className="spinner-border spinner-border-sm me-2"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                ) : null}
+                cadastrar
+              </button>
+              <div className="link-botao"></div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );

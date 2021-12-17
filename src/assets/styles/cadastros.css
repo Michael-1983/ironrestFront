@@ -1,0 +1,57 @@
+
+/* estilos de paginas de cadastros */
+.div-cadastros{
+    width: 700px;
+    background-color: rgb(105, 3, 105);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* estilos dos botoes de cadastros*/
+
+.botoes{
+    background-color: blue;
+    color: white;
+}
+
+
+/*estilos dos posts*/
+
+.posts{
+    width: 1000px;
+    height:auto;
+    margin-top: 10px;
+}
+
+.div-slide{
+    width: auto;
+    margin-top: 20px;
+    height: auto;
+}
+
+/*estilos dos slides*/
+.slide{
+    width: auto;
+    height: 450px;
+}
+
+/*estilos da lista de posts*/
+.lista-posts{
+    width: 800px;
+    height: 200px;
+    margin: 5px;
+}
+
+.rodape{
+    background-color: rgb(105, 3, 105);
+    color: white;
+    height:50px;
+    margin-bottom:0px;
+
+}
+
+
+
