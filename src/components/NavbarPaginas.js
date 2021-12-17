@@ -8,13 +8,16 @@ function NavbarPaginas() {
 
   return (
     <nav className="navbar">
-      <h1 className="TituloP">Marias da Penha</h1>
+      <h1 className="Titulo">Marias da Penha</h1>
       <div>
-        <Link to="/home">
-          {" "}
+        <Link className="buttonHome" to="/">
           <i class="fas fa-home"></i>
         </Link>
-        <a href="http://globo.com"> Disfarce</a>
+        <div className="button1">
+          <a class href="http://globo.com">
+            Disfarce
+          </a>
+        </div>
       </div>
       <div>
         {loggedInUser.user._id ? (

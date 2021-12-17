@@ -1,14 +1,15 @@
-.link-cadastro{
-    color:white;
-    text-decoration: none;
-    display: inline-block;
-    border: 1px solid black;
-    padding: 5px;
-    margin-bottom: 0px;
-    border-radius:10px;
-    background-color: danger;
-    margin-left: 20px;
-    flex-direction: column;
+.link-cadastro {
+  text-color: white;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid black;
+  padding: 5px;
+  margin-bottom: 0px;
+  border-radius: 20px;
+  background-color: danger;
+  margin-left: 20px;
+  flex-direction: column;
 }
 
-    
+.spinner-border {
+}

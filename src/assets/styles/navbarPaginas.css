@@ -1,27 +1,20 @@
-.TituloP {
+.Titulo {
   font-size: 60px;
   font-family: "Abril Fatface", cursive;
   text-align: center;
   color: rgb(253, 253, 253);
-  margin-left: 5%;
+  margin-left: 35%;
   word-spacing: 15px;
+  position: absolute;
 }
-.LinksP {
-  margin-left: -150%;
-}
+
 .navbarP {
   background-color: rgb(105, 3, 105);
   height: 95px;
 }
-.navbar-navP {
-  margin-bottom: 0;
-  margin-left: -950%;
-  list-style: none;
-  align-content: stretch;
-  justify-content: space-around;
-  align-items: stretch;
-  margin-left: -868%;
+.buttonHome {
+  margin-left: 25%;
 }
-.icone {
-  width: 500px;
+.button1 {
+  margin-top: 22%;
 }

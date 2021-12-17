@@ -7,6 +7,8 @@ import ProtectedRoute from "../pages/auth/ProtectedRoute";
 import { AuthContextComponent } from "../contexts/authContext";
 import Posts from "../pages/auth/Posts";
 import Sobre from "./Sobre";
+import CadastroFamilia from "./forms/CadastroFamilia";
+import CriaPost from "../components/../pages/Posts/CriaPost";
 
 function App() {
   return (
@@ -16,9 +18,11 @@ function App() {
           <Route path="/post" element={<Posts />} />
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<CadastroVitma />} />
+          <Route path="/family" element={<CadastroFamilia />} />
           <Route path="/login" element={<Login />} />
           <Route path="/post" element={<ProtectedRoute component={Posts} />} />
           <Route path="/sobre" element={<Sobre />} />
+          <Route path="/cadastro-post" element={<CriaPost />} />
         </Routes>
       </AuthContextComponent>
     </div>

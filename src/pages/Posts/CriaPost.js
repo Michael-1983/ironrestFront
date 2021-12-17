@@ -3,34 +3,28 @@ import { useState } from "react";
 import FormField from "../../components/forms/FormField";
 
 import api from "../../apis/api";
+import { useNavigate } from "react-router-dom";
 
 function PostCreate() {
   const [posts, setPosts] = useState({
     sobrenome: "",
     idade: "",
     estado: "",
-    cidade:"",
-    descricao:"",
-   
+    descricao: "",
   });
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   function handleChange(e) {
     if (e.target.files) {
       return setPosts({
         ...posts,
-        [e.target.name]: e.target.files[0],
+        [e.target.sobrenome]: e.target.files[0],
       });
     }
 
-    setPosts({ ...posts, [e.target.name]: e.target.value });
+    setPosts({ ...posts, [e.target.sobrenome]: e.target.value });
   }
-
-  
-
-  
-
-      
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -38,15 +32,10 @@ function PostCreate() {
     try {
       setLoading(true);
 
-     
-
-      const response = await api.post(
-        "/cadastro-post",
-        {
-          ...posts,
-          
-        }
-      );
+      const response = await api.post("/cadastro-post", {
+        ...posts,
+      });
+      navigate("/");
 
       console.log(response);
       setLoading(false);
@@ -63,7 +52,7 @@ function PostCreate() {
         <form onSubmit={handleSubmit}>
           <FormField
             label="Sobrenome"
-            id="postFormName"
+            id="sobrenome"
             name="sobrenome"
             onChange={handleChange}
             value={posts.sobrenome}
@@ -92,16 +81,6 @@ function PostCreate() {
             readOnly={loading}
           />
 
-          <FormField
-            type="text"
-            label="Cidade"
-            id="postCidade"
-            name="cidade"
-            onChange={handleChange}
-            value={posts.cidade}
-            required
-            readOnly={loading}
-          />
           <div className="col-12">
             <textArea
               label="Conteudo"

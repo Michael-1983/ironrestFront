@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-
 import CardPost from "./CardPost";
-
 import api from "../../apis/api";
+import "../../assets/styles/postlist.css";
 
 function PostList() {
-     const [postList, setPostList] = useState([]);
+  const [postList, setPostList] = useState([]);
 
   useEffect(() => {
     async function fetchPost() {
@@ -21,7 +20,7 @@ function PostList() {
   }, []);
 
   return (
-    <div>
+    <div className="postdiv">
       <div className="list-group">
         {postList.map((currentPostObj) => (
           <CardPost key={currentPostObj._id} {...currentPostObj} />
@@ -29,6 +28,5 @@ function PostList() {
       </div>
     </div>
   );
-
 }
 export default PostList;
