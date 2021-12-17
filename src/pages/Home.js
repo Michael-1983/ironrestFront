@@ -4,13 +4,15 @@ import Navbar from "../components/Navbar";
 import LoginVitma from "./auth/LoginVitma";
 import LoginFamily from "./auth/LoginFamily";
 
+
+
 function Home() {
   return (
     <>
       <Navbar />
 
       <LoginVitma />
-
+    
       <LoginFamily />
     </>
   );

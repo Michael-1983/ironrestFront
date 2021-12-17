@@ -2,20 +2,19 @@
 import PostList  from "../../pages/Posts/PostList";
 import Slide from "../../components/Slide";
 import NavbarPaginas  from "../../components/NavbarPaginas";
-import DeletePost from "../../pages/Posts/DeletePost";
+import PostDetail from "../../pages/Posts/PostDeteils";
 
 
 function Posts(){
 return (
   <div>
     <NavbarPaginas />
-    <div className="container w-100">
+
+    <div className="container">
       <div className="col-10">
         <Slide />
         <PostList />
-      </div>
-      <div>
-        <DeletePost />
+        <PostDetail />
       </div>
     </div>
   </div>

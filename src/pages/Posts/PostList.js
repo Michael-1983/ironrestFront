@@ -24,6 +24,7 @@ function PostList() {
       <div className="list-group lista-posts">
         {postList.map((currentPostObj) => (
           <CardPost key={currentPostObj._id} {...currentPostObj} />
+          
         ))}
        
       </div>

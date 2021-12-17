@@ -18,14 +18,6 @@
 }
 
 
-/*estilos dos posts*/
-
-.posts{
-    width: 1000px;
-    height:auto;
-    margin-top: 10px;
-}
-
 .div-slide{
     width: auto;
     margin-top: 20px;
@@ -35,15 +27,10 @@
 /*estilos dos slides*/
 .slide{
     width: auto;
-    height: 450px;
+    height: 300px;
 }
 
-/*estilos da lista de posts*/
-.lista-posts{
-    width: 800px;
-    height: 200px;
-    margin: 5px;
-}
+
 
 .rodape{
     background-color: rgb(105, 3, 105);

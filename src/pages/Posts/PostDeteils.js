@@ -5,7 +5,9 @@ import api from "../../apis/api";
 
 import ConfirmationModal from "../../components/ConfimationModal";
 
-function PosttDetail() {
+
+
+function PostDetail() {
     const [postDetails, setPostDetails] = useState({
         sobrenome: "",
         idade: "",
@@ -17,6 +19,8 @@ function PosttDetail() {
     const [showModal, setShowModal] = useState(false);
 
     const { id } = useParams();
+
+    
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -33,55 +37,44 @@ function PosttDetail() {
     }, [id]);
 
     return (
-        <div>
-            <div className="img-container d-flex justify-content-between">
-               
-
-                <div>
-                    <button className="btn btn-warning me-2">Editar</button>
-                    <button className="btn-delete" onClick={() => setShowModal(true)}>
-                        Deletar
-                    </button>
-                </div>
-            </div>
-
-            <h3>
-                <strong>Nome: </strong>
-                {postDetails.sobrenome}
-            </h3>
-            <h4>
-                <strong>idade: </strong>
-                {postDetails.idade}
-            </h4>
-            <h4>
-                <strong>estado: </strong>
-                {postDetails.estado}
-            </h4>
-            <h4>
-                <strong>Cidade: </strong>
-                {postDetails.cidade}
-            </h4>
-            <h4>
-                <strong>Descrição: </strong>
-                {postDetails.descricao}
-            </h4>
-           
-
-            <ConfirmationModal
-                title="Tem certeza?"
-                variant="danger"
-                confirmationText="Deletar"
-                show={showModal}
-                handleClose={() => setShowModal(false)}
-                handleConfirmation={() => {
-                    navigate(`/delete-post/${id}`);
-                    setShowModal(false);
-                }}
-            >
-                Tem certeza que quer deletar?
-            </ConfirmationModal>
+      <div>
+        <div className="img-container d-flex justify-content-between">
+          <div>
+            <button className="btn btn-warning me-2">Editar</button>
+            <button className="btn-delete" onClick={() => setShowModal(true)}>
+              Deletar
+            </button>
+          </div>
         </div>
+
+        <h3>
+          {postDetails.sobrenome}
+        </h3>
+        <h4>
+          {postDetails.idade}
+        </h4>
+        
+        <h4>{postDetails.estado}</h4>
+
+        <label>Nombre</label>
+        <h4>{postDetails.cidade}</h4>
+        <h4>{postDetails.descricao}</h4>
+
+        <ConfirmationModal
+          title="Tem certeza?"
+          variant="danger"
+          confirmationText="Deletar"
+          show={showModal}
+          handleClose={() => setShowModal(false)}
+          handleConfirmation={() => {
+            navigate(`/delete-post/${id}`);
+            setShowModal(false);
+          }}
+        >
+          Tem certeza que quer deletar?
+        </ConfirmationModal>
+      </div>
     );
 }
 
-export default PosttDetail;
+export default PostDetail;

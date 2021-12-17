@@ -12,7 +12,7 @@ function PostDelete() {
         async function deletePost() {
             try {
                 await api.delete(`/dele-post${id}`);
-                navigate("/post");
+                navigate("/lista-post");
             } catch (err) {
                 console.error(err);
             }
@@ -20,7 +20,7 @@ function PostDelete() {
         deletePost();
     }, [id, navigate]);
 
-    return <div>Deletando...</div>;
+    return <div>Deletando</div>;
 }
 
 export default PostDelete;

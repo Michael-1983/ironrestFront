@@ -38,7 +38,7 @@ function Login(props) {
         {...state} 
      
         );
-      navigate("/"); 
+      navigate("/post"); 
       
         console.log(response);
       authContext.setLoggedInUser({ ...response.data });

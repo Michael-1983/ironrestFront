@@ -117,23 +117,8 @@ function PostCreate() {
           </div>
 
           <div className="mb-3 text-right">
-            <button
-              disabled={loading}
-              type="submit"
-              className="btn botoes"
-            >
-              {loading ? (
-                <>
-                  <span
-                    className="spinner-border spinner-border-sm"
-                    role="status"
-                    aria-hidden="true"
-                  ></span>{" "}
-                  <span>Carregando...</span>{" "}
-                </>
-              ) : (
-                "Criar "
-              )}
+            <button>
+             Editar 
             </button>
           </div>
         </form>
