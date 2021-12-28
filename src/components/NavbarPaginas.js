@@ -7,7 +7,7 @@ function NavbarPaginas() {
   const { loggedInUser, logout } = useContext(AuthContext);
 
   return (
-    <nav className="navbar">
+    <nav className="navbarP">
       <h1 className="Titulo">Marias da Penha</h1>
       <div>
         <Link className="buttonHome" to="/">
