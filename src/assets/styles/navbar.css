@@ -18,9 +18,13 @@
   margin-top: -3%;
 }
 .buttonB {
-  margin-left: -76%;
+  margin-left: 2%;
   margin-top: 3%;
+  position: absolute;
 }
 .buttonC {
   margin-left: -95%;
+}
+.boasvindas {
+  color: antiquewhite;
 }

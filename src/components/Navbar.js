@@ -19,7 +19,9 @@ function Navbar() {
       <div>
         {loggedInUser.user._id ? (
           <>
-            <span>Bem-vindo, {loggedInUser.user.name}</span>
+            <span className="boasvindas">
+              Bem-vindo, {loggedInUser.user.name}
+            </span>
             <button onClick={logout} className="btn btn-link">
               Sair
             </button>

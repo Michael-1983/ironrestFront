@@ -21,11 +21,9 @@ function PostList() {
 
   return (
     <div className="postdiv">
-      <div className="list-group">
-        {postList.map((currentPostObj) => (
-          <CardPost key={currentPostObj._id} {...currentPostObj} />
-        ))}
-      </div>
+      {postList.map((postObj) => (
+        <CardPost key={postObj._id} {...postObj} />
+      ))}
     </div>
   );
 }

@@ -33,7 +33,7 @@ function Login(props) {
 
     try {
       const response = await api.post("/login-familia", state);
-      navigate("/perfil-familia");
+      navigate("/");
 
       console.log(response);
 

@@ -1,29 +1,30 @@
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import FormField from "../../components/forms/FormField";
+import NavbarPaginas from "../../components/NavbarPaginas";
+import "../../assets/styles/criaPost.css";
 
 import api from "../../apis/api";
-import { useNavigate } from "react-router-dom";
 
 function PostCreate() {
   const [posts, setPosts] = useState({
-    sobrenome: "",
+    nickName: "",
     idade: "",
     estado: "",
+    cidade: "",
     descricao: "",
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
   function handleChange(e) {
     if (e.target.files) {
       return setPosts({
         ...posts,
-        [e.target.sobrenome]: e.target.files[0],
+        [e.target.name]: e.target.files[0],
       });
     }
 
-    setPosts({ ...posts, [e.target.sobrenome]: e.target.value });
+    setPosts({ ...posts, [e.target.name]: e.target.value });
   }
 
   async function handleSubmit(e) {
@@ -46,16 +47,18 @@ function PostCreate() {
   }
 
   return (
-    <div className="container mb-5 p-5">
-      <div className="col-8">
-        <h1>Post</h1>
-        <form onSubmit={handleSubmit}>
+    <>
+      <NavbarPaginas />
+
+      <h1 className="conteSua">Conte aqui a sua história de forma anônima</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="container">
           <FormField
-            label="Sobrenome"
-            id="sobrenome"
-            name="sobrenome"
+            label="Nickname"
+            id="postFormName"
+            name="nickName"
             onChange={handleChange}
-            value={posts.sobrenome}
+            value={posts.nickName}
             required
             readOnly={loading}
           />
@@ -81,7 +84,7 @@ function PostCreate() {
             readOnly={loading}
           />
 
-          <div className="col-12">
+          <div className="descricao">
             <textArea
               label="Conteudo"
               id="textConteudo"
@@ -94,13 +97,10 @@ function PostCreate() {
               readOnly={loading}
             />
           </div>
+          <div clasName="container"></div>
 
-          <div className="mb-3 text-right">
-            <button
-              disabled={loading}
-              type="submit"
-              className="btn btn-primary"
-            >
+          <div>
+            <button disabled={loading} type="submit" className="botaoCriar">
               {loading ? (
                 <>
                   <span
@@ -115,9 +115,9 @@ function PostCreate() {
               )}
             </button>
           </div>
-        </form>
-      </div>
-    </div>
+        </div>
+      </form>
+    </>
   );
 }
 export default PostCreate;

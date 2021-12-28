@@ -37,7 +37,7 @@ function Login(props) {
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      navigate("/signup");
+      navigate("/cadastro-post");
     } catch (err) {
       if (err.response) {
         setErrors({ ...err.response.data.errors });
@@ -52,7 +52,9 @@ function Login(props) {
         <div className="stop">
           <img src={login} alt="stop" />
         </div>
-        <h1 className="titleLogin">Conte aqui a sua história</h1>
+        <h1 className="titleLogin">
+          Conte aqui a sua história. Você pode salvar vidas!
+        </h1>
         <div className="btn">
           <div className="btn-login">
             <button className="btnLogin mt-3 " type="submit">
