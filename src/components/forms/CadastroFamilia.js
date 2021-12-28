@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 import FormField from "./FormField";
+import NavbarPaginas from "../NavbarPaginas";
 
 function CadastroFamilia(props) {
   const [familia, setFamilia] = useState({
@@ -17,11 +18,11 @@ function CadastroFamilia(props) {
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({
     name: null,
-    email:null,
+    email: null,
     cep: null,
-    address:null,
+    address: null,
     phone: null,
-    password:null,
+    password: null,
     confirmPassword: null,
   });
 
@@ -48,7 +49,7 @@ function CadastroFamilia(props) {
         familia
       );
       setLoading(false);
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       if (err.response) {
         console.error(err.response);
@@ -62,11 +63,11 @@ function CadastroFamilia(props) {
   }
 
   return (
-
     // cadastrando as familias que vão ajudar as vitmas
     <div>
+      <NavbarPaginas />
       <div className="container">
-        <h1>Ajude as vitmas de violência</h1>
+        <h1>Ajude as vitmas de violência doméstica</h1>
 
         <form onSubmit={handleSubmit}>
           <FormField
@@ -167,11 +168,6 @@ function CadastroFamilia(props) {
             ) : null}
             cadastrar
           </button>
-          <span>
-            <Link to="/login" className="link-cadastro">
-              Already have an account? Click here to login.
-            </Link>
-          </span>
         </form>
       </div>
     </div>

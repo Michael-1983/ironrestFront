@@ -7,3 +7,16 @@
   text-align: center;
   color: rgb(42, 240, 15);
 }
+.container {
+  margin-top: 2%;
+}
+.imagemSobre {
+  vertical-align: middle;
+  border-style: none;
+  width: 400px;
+  margin-left: 28%;
+}
+.textoSobre {
+  font-size: 29px;
+  color: rgb(64, 3, 121);
+}

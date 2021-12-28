@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import FormField from "../../components/forms/FormField";
 import api from "../../apis/api";
 import "../../assets/styles/cadastroFamilia.css";
+import NavbarPaginas from "../NavbarPaginas";
 
 function CadastroVitma(props) {
   const [state, setState] = useState({
@@ -49,7 +50,7 @@ function CadastroVitma(props) {
       console.log(response);
 
       setLoading(true);
-      navigate("/login-vitma");
+      navigate("/");
     } catch (err) {
       if (err.response) {
         console.error(err.response);
@@ -64,10 +65,11 @@ function CadastroVitma(props) {
 
   return (
     <div>
+      <NavbarPaginas />
       <div className="container">
         {/* cadastrando a vitma no sistema */}
 
-        <h1>Cadastrar Vitima</h1>
+        <h1>Cadastro</h1>
         <form onSubmit={handleSubmit}>
           <FormField
             label="Nome:"
@@ -165,11 +167,7 @@ function CadastroVitma(props) {
             readOnly={loading}
           />
 
-          <button
-            disabled={loading}
-            className="btn btn-danger mt-3"
-            type="submit"
-          >
+          <button disabled={loading} className="SubmeterCadastro" type="submit">
             {loading ? (
               <span
                 className="spinner-border spinner-border-sm me-2"
@@ -178,11 +176,6 @@ function CadastroVitma(props) {
               ></span>
             ) : null}
             cadastrar
-          </button>
-          <button className="btn btn-link">
-            <Link to="/login" className="">
-              Já tem uma conta? Clique aqui para entrar.
-            </Link>
           </button>
         </form>
       </div>

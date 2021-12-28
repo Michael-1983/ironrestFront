@@ -5,10 +5,6 @@ import { AuthContext } from "../../contexts/authContext";
 import "../../assets/styles/loginFamily.css";
 import loginfamilia from "../../assets/images/familia.jfif";
 
-
-
-
-
 function Login(props) {
   const authContext = useContext(AuthContext);
 
@@ -36,11 +32,9 @@ function Login(props) {
     event.preventDefault();
 
     try {
-      const response = await api.post("/login-familia",
-        state
-      );
-     navigate("/perfil-familia"); 
-       
+      const response = await api.post("/login-familia", state);
+      navigate("/");
+
       console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });
@@ -98,8 +92,8 @@ function Login(props) {
           </div>
 
           <button name="admin" onClick={handleclick} className="btnClick mt-3">
-            <Link to="/signup">
-              Não tem uma conta? Clique aqui para cadastrar!
+            <Link to="/family">
+              Cadastre-se aqui e ajude uma vítima de violência doméstica!
             </Link>
           </button>
         </div>

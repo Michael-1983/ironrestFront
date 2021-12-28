@@ -5,12 +5,9 @@ import { AuthContext } from "../../contexts/authContext";
 import login from "../../assets/images/login.jpeg";
 import "../../assets/styles/loginVitima.css";
 
-
-//login da vitma
 function Login(props) {
   const authContext = useContext(AuthContext);
   const [state, setState] = useState({ password: "", email: "" });
-
   const [errors, setErrors] = useState({
     email: null,
     password: null,
@@ -31,33 +28,33 @@ function Login(props) {
     event.preventDefault();
     try {
       const response = await api.post("/login-vitma", state);
-      navigate("/signu");
+      navigate("/");
 
       console.log(response);
-
-
-
       authContext.setLoggedInUser({ ...response.data });
       localStorage.setItem(
         "loggedInUser",
-
         JSON.stringify({ ...response.data })
       );
       setErrors({ password: "", email: "" });
-      navigate("/signup");
+      navigate("/cadastro-post");
     } catch (err) {
-
-     // console.errors(err.response);
-      setErrors({ ...err.response.data.errors });
+      if (err.response) {
+        setErrors({ ...err.response.data.errors });
+        console.error(err.response);
+      }
     }
   }
+
   return (
     <div className="loginVitima">
       <form onSubmit={handleSubmit}>
         <div className="stop">
           <img src={login} alt="stop" />
         </div>
-        <h1 className="titleLogin">Conte aqui a sua história</h1>
+        <h1 className="titleLogin">
+          Conte aqui a sua história. Você pode salvar vidas!
+        </h1>
         <div className="btn">
           <div className="btn-login">
             <button className="btnLogin mt-3 " type="submit">
