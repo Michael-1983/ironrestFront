@@ -15,7 +15,8 @@
 
 .buttonA {
   margin-left: 2%;
-  margin-top: -3%;
+  margin-top: -2%;
+  position: absolute;
 }
 .buttonB {
   margin-left: 2%;
@@ -27,4 +28,5 @@
 }
 .boasvindas {
   color: antiquewhite;
+  margin-left: 1244px;
 }

@@ -1,15 +1,17 @@
+import "../../assets/styles/cadastroFamilia.css";
+
 function PostCreat() {
   return (
-    <div className="container">
+    <div className="backgroundHome">
       <div className="cadastro">
         <h1>Cadastre Seu Post</h1>
       </div>
       {/* Formulario de criacao do cadastro de familias */}
       <form>
         {/* campo de nome */}
-        <div class="form-row">
+        <div className="form-row">
           {/* campo da senha */}
-          <div class="form-group col-md-6">
+          <div className="form-group col-md-6">
             <label for="inputSobrenome">Sobrenome:</label>
             <input
               type="text"
@@ -21,8 +23,8 @@ function PostCreat() {
         </div>
 
         {/* campo do cep */}
-        <div class="form-row">
-          <div class="form-group col-md-6">
+        <div className="form-row">
+          <div className="form-group col-md-6">
             <label for="inputIdade">Idade:</label>
             <input
               type="text"
@@ -33,8 +35,8 @@ function PostCreat() {
           </div>
 
           {/*campo telefone*/}
-          <div class="form-row">
-            <div class="form-group col-md-6">
+          <div className="form-row">
+            <div className="form-group col-md-6">
               <label for="inputCity">Estado:</label>
               <input
                 type="text"
@@ -46,8 +48,8 @@ function PostCreat() {
           </div>
         </div>
         {/* campo do email */}
-        <div class="form-row">
-          <div class="form-group col-md-6">
+        <div className="form-row">
+          <div className="form-group col-md-6">
             <label for="inputEstado">Cidade:</label>
             <input
               type="text"
@@ -58,7 +60,7 @@ function PostCreat() {
           </div>
 
           {/* campo da senha */}
-          <div class="form-group col-md-6">
+          <div className="form-group col-md-6">
             <label for="inputCidade">Conteudo:</label>
             <textarea
               type="text-area"
@@ -69,8 +71,8 @@ function PostCreat() {
           </div>
         </div>
 
-        <div class="form-row">
-          <div class="form-group col-md-6">
+        <div className="form-row">
+          <div className="form-group col-md-6">
             <label for="inputImage">Imagem:</label>
             <input
               type="url"
@@ -82,7 +84,7 @@ function PostCreat() {
         </div>
 
         {/* botão cadastrar familia */}
-        <button type="submit" class="btn btn-danger">
+        <button type="submit" className="btn btn-danger">
           Cadastrar
         </button>
       </form>

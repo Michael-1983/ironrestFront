@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import FormField from "../../components/forms/FormField";
 import api from "../../apis/api";
 import "../../assets/styles/cadastroFamilia.css";
@@ -64,12 +64,12 @@ function CadastroVitma(props) {
   }
 
   return (
-    <div>
+    <div className="backgroundHome">
       <NavbarPaginas />
       <div className="container">
         {/* cadastrando a vitma no sistema */}
 
-        <h1>Cadastro</h1>
+        <h1 className="cadastro">Cadastro</h1>
         <form onSubmit={handleSubmit}>
           <FormField
             label="Nome:"

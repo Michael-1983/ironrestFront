@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import LoginVitma from "./auth/LoginVitma";
 import LoginFamily from "./auth/LoginFamily";
 import PostList from "./Posts/PostList";
+import HomeChat from "../chat/HomeChat";
 
 function Home() {
   return (
@@ -28,6 +29,7 @@ function Home() {
 
         <PostList />
       </div>
+      <HomeChat />
     </div>
   );
 }

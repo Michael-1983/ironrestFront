@@ -4,7 +4,7 @@ import NavbarPaginas from "../components/NavbarPaginas";
 
 function Sobre() {
   return (
-    <>
+    <div className="backgroundHome">
       <NavbarPaginas />
 
       <h1 className=" textoSobre text-center box d-flex flex-column justify-content-center align-items-center">
@@ -15,9 +15,12 @@ function Sobre() {
         "Marias da Penha" na luta pela justiça e pelo respeito!
       </h1>
       <div className="imagemSobre">
-        <img src="https://www.informasus.ufscar.br/wp-content/uploads/2020/11/Tipos-de-violencia-contra-a-mulher.jpg"></img>
+        <img
+          src="https://www.informasus.ufscar.br/wp-content/uploads/2020/11/Tipos-de-violencia-contra-a-mulher.jpg"
+          alt="dados sobre violência doméstica"
+        ></img>
       </div>
-    </>
+    </div>
   );
 }
 

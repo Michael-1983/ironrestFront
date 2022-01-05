@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 import FormField from "./FormField";
 import NavbarPaginas from "../NavbarPaginas";
@@ -38,10 +38,6 @@ function CadastroFamilia(props) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    if (familia.password !== familia.confirmPassword) {
-      return setErrors("senha e confirmação são diferentes");
-    }
-
     try {
       setLoading(false);
       const response = await api.post(
@@ -59,12 +55,11 @@ function CadastroFamilia(props) {
       console.error(err);
       setLoading(false);
     }
-    setErrors("O campo senha e confima senha são diferentes");
   }
 
   return (
     // cadastrando as familias que vão ajudar as vitmas
-    <div>
+    <div className="backgroundHome">
       <NavbarPaginas />
       <div className="container">
         <h1>Ajude as vitmas de violência doméstica</h1>
