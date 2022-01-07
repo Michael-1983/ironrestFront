@@ -11,9 +11,7 @@ import CriaPost from "../components/../pages/Posts/CriaPost";
 import DeletePost from "../pages/Posts/DeletePost";
 import EditPost from "../pages/Posts/EditPost";
 import Permission from "../components/permission";
-import React from "react";
-import HomeChat from "../chat/HomeChat";
-import ChatRoom from "../pages/Posts/ChatRoom";
+import AppChat from "../components/forms/AppChat";
 
 function App() {
   return (
@@ -29,6 +27,7 @@ function App() {
           <Route path="/post" element={<ProtectedRoute component={Posts} />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/cadastro-post" element={<CriaPost />} />
+          <Route path="/chat-room" element={<AppChat />} />
           <Route
             path="/editar-post/:id"
             element={<ProtectedRoute component={EditPost} />}
@@ -37,9 +36,6 @@ function App() {
             path="/delete/:id"
             element={<ProtectedRoute component={DeletePost} />}
           />
-          <Route path="/home-chat" element={<HomeChat />} />
-          <Route path="/:room-Id" element={<ChatRoom />} />
-          <Route path="/chat-room" element={<ChatRoom />} />
         </Routes>
       </AuthContextComponent>
     </div>

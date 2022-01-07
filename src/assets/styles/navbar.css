@@ -30,3 +30,9 @@
   color: antiquewhite;
   margin-left: 1244px;
 }
+.buttonChat {
+  margin-left: -12%;
+  margin-top: 2%;
+  position: absolute;
+  font-size: 25px;
+}

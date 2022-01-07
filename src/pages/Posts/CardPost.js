@@ -6,7 +6,7 @@ import { useContext } from "react";
 function CardPost(props) {
   const { loggedInUser } = useContext(AuthContext);
   return (
-    <div className="card" style={{ width: "70rem", height: "20rem" }}>
+    <div className="card" style={{ width: "59rem", height: "20rem" }}>
       <div className="card-body">
         <h3 className="nickname">{props.nickName}</h3>
         <h3 className="idade">

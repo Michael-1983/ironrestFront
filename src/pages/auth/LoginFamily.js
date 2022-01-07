@@ -70,7 +70,7 @@ function Login(props) {
             <input
               type="email"
               name="email"
-              id="signupFormEmail"
+              id="signupFormEmailFamily"
               value={state.email}
               error={errors.email}
               onChange={handleChange}
@@ -84,7 +84,7 @@ function Login(props) {
             <input
               type="password"
               name="password"
-              id="signupFormPassword"
+              id="signupFormPasswordFamily"
               value={state.password}
               error={errors.password}
               onChange={handleChange}
