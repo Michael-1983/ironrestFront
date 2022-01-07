@@ -20,7 +20,7 @@
   font-size: 25px;
   flex-wrap: wrap;
   align-content: center;
-  margin-left: 13%;
+  margin-left: 3%;
   color: rgb(44, 2, 48);
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: bold;
@@ -34,7 +34,7 @@
   font-size: 20px;
   flex-wrap: wrap;
   align-content: center;
-  margin-left: 9%;
+  margin-left: 4%;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: bold;
   font-size: 30px;
@@ -48,7 +48,7 @@
   flex-wrap: wrap;
   align-content: center;
   width: 928px;
-  margin-left: 26%;
+  margin-left: 19%;
   margin-top: 5%;
   justify-content: center;
   color: rgb(243, 6, 203);

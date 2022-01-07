@@ -118,7 +118,10 @@ li {
 
 .message {
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
 }
 
 .sent {
@@ -126,9 +129,11 @@ li {
 }
 
 .sent p {
-  color: white;
-  background: #0b93f6;
+  color: rgb(243, 10, 212);
+  background: #f9f9fa;
+  border-radius: 10%;
   align-self: flex-end;
+  font-size: 23px;
 }
 .received p {
   background: #e5e5ea;
