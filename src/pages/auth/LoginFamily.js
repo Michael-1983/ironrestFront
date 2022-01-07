@@ -59,7 +59,7 @@ function Login(props) {
         <h1 className="subtitle">Acolha uma vítima de violência doméstica</h1>
         <div className="btn">
           <div className="btn-login">
-            <button className="btnLogin mt-3 " type="submit">
+            <button className="btnLoginF" type="submit">
               Login
             </button>
           </div>

@@ -57,7 +57,7 @@ function Login(props) {
         </h1>
         <div className="btn">
           <div className="btn-login">
-            <button className="btnLogin " type="submit">
+            <button className="btnLoginV " type="submit">
               Login
             </button>
           </div>
