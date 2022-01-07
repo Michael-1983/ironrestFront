@@ -26,11 +26,10 @@ function Navbar() {
               Sair
             </button>
           </>
-        ) : (
-          <Link className="buttonC" to="/login">
-            Entrar
-          </Link>
-        )}
+        ) : null}
+        <Link className="buttonChat" to="/chat-room">
+          Bate Papo
+        </Link>
       </div>
     </nav>
   );

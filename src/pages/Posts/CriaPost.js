@@ -97,7 +97,7 @@ function PostCreate() {
               readOnly={loading}
             />
           </div>
-          <div clasName="container"></div>
+          <div className="container"></div>
 
           <div>
             <button disabled={loading} type="submit" className="botaoCriar">

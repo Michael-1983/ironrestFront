@@ -11,6 +11,7 @@ import CriaPost from "../components/../pages/Posts/CriaPost";
 import DeletePost from "../pages/Posts/DeletePost";
 import EditPost from "../pages/Posts/EditPost";
 import Permission from "../components/permission";
+import AppChat from "../components/forms/AppChat";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/post" element={<ProtectedRoute component={Posts} />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/cadastro-post" element={<CriaPost />} />
+          <Route path="/chat-room" element={<AppChat />} />
           <Route
             path="/editar-post/:id"
             element={<ProtectedRoute component={EditPost} />}
