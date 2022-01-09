@@ -6,9 +6,6 @@ import "firebase/compat/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import NavbarPaginas from "../NavbarPaginas";
-import { useContext } from "react";
-
-import { AuthContext } from "../../contexts/authContext";
 
 firebase.initializeApp({
   apiKey: "AIzaSyC53r7q03D-Tp7c32cx5WtfZgg36MG0SV4",
