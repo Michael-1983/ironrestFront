@@ -1,13 +1,8 @@
 import axios from "axios";
 
 const apis = {
-<<<<<<< HEAD
-  development: "http://localhost:4000",
-  production: "https://projetomariasdapenha.herokuapp.com/",
-=======
-  development: "http://localhost:4000/api/v1",
-  production: "https://mulheresdapenha.herokuapp.com/api/v1",
->>>>>>> debc77f06fb001da4604bb2ccf46f0d96e3f9445
+  development: "http://localhost:4000/api",
+  production: "https://mulheresdapenha.herokuapp.com/api",
 };
 
 // Pré-configurando a URL padrão do nosso backend em uma instância do Axios
