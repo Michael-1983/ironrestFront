@@ -8,7 +8,7 @@
   margin-left: 2%;
   font-size: 60px;
   text-align: center;
-  margin-top: 1%;
+  margin-top: -27%;
   width: 250px;
 }
 .titleLogin {
@@ -20,12 +20,12 @@
   height: 120px;
   border-radius: 18px;
 }
-.btnLogin {
+.btnLoginV {
   background: #9507af;
   color: #fff;
-  border: 1pxsolid#eee;
+  border: 1px solid #eee;
   border-radius: 20px;
-  box-shadow: 5px5px5px#eee;
+  box-shadow: 2px 2px 2px #eee;
   text-shadow: none;
   margin-left: 2%;
 }

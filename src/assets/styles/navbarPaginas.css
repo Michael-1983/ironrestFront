@@ -1,26 +1,32 @@
-.TituloP {
+.Titulo {
   font-size: 60px;
   font-family: "Abril Fatface", cursive;
   text-align: center;
   color: rgb(253, 253, 253);
-  margin-left: 5%;
+  margin-left: 35%;
   word-spacing: 15px;
+  position: absolute;
 }
-.LinksP {
-  margin-left: -150%;
-}
+
 .navbarP {
   background-color: rgb(105, 3, 105);
   height: 95px;
 }
-.navbar-navP {
-  margin-bottom: 0;
-  margin-left: -950%;
-  list-style: none;
-  align-content: stretch;
-  justify-content: space-around;
-  align-items: stretch;
-  margin-left: -868%;
+
+.buttonHome {
+  margin-left: -94%;
+  margin-top: 1%;
+  position: absolute;
+}
+.buttonB {
+  margin-left: 2%;
+  margin-top: 4%;
+  position: absolute;
+}
+
+.boasvindas {
+  color: antiquewhite;
+  margin-left: 1244px;
 }
 .icone {
   width: 500px;

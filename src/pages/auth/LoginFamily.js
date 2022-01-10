@@ -5,10 +5,6 @@ import { AuthContext } from "../../contexts/authContext";
 import "../../assets/styles/loginFamily.css";
 import loginfamilia from "../../assets/images/familia.jfif";
 
-
-
-
-
 function Login(props) {
   const authContext = useContext(AuthContext);
 
@@ -36,11 +32,9 @@ function Login(props) {
     event.preventDefault();
 
     try {
-      const response = await api.post("/login-familia",
-        state
-      );
-     navigate("/perfil-familia"); 
-       
+      const response = await api.post("/login-familia", state);
+      navigate("/");
+
       console.log(response);
 
       authContext.setLoggedInUser({ ...response.data });
@@ -65,7 +59,7 @@ function Login(props) {
         <h1 className="subtitle">Acolha uma vítima de violência doméstica</h1>
         <div className="btn">
           <div className="btn-login">
-            <button className="btnLogin mt-3 " type="submit">
+            <button className="btnLoginF" type="submit">
               Login
             </button>
           </div>
@@ -76,7 +70,7 @@ function Login(props) {
             <input
               type="email"
               name="email"
-              id="signupFormEmail"
+              id="signupFormEmailFamily"
               value={state.email}
               error={errors.email}
               onChange={handleChange}
@@ -90,7 +84,7 @@ function Login(props) {
             <input
               type="password"
               name="password"
-              id="signupFormPassword"
+              id="signupFormPasswordFamily"
               value={state.password}
               error={errors.password}
               onChange={handleChange}
@@ -98,8 +92,8 @@ function Login(props) {
           </div>
 
           <button name="admin" onClick={handleclick} className="btnClick mt-3">
-            <Link to="/signup">
-              Não tem uma conta? Clique aqui para cadastrar!
+            <Link to="/family">
+              Cadastre-se aqui e ajude uma vítima de violência doméstica!
             </Link>
           </button>
         </div>

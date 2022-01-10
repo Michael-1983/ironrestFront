@@ -7,31 +7,28 @@ function NavbarPaginas() {
   const { loggedInUser, logout } = useContext(AuthContext);
 
   return (
-    <nav className="navbar">
-      <h1 className="TituloP">Marias da Penha</h1>
+    <nav className="navbarP">
+      <h1 className="Titulo">Marias da Penha</h1>
       <div>
-        <Link to="/home">
-          {" "}
-          <i class="fas fa-home"></i>
-        </Link>
-        <a href="http://globo.com"> Disfarce</a>
+        <div className="buttonB">
+          <a href="http://globo.com">Disfarce</a>
+        </div>
       </div>
       <div>
         {loggedInUser.user._id ? (
           <>
-            <span>Bem-vindo, {loggedInUser.user.name}</span>
+            <span className="boasvindas">
+              {" "}
+              Bem-vindo, {loggedInUser.user.name}
+            </span>
             <button onClick={logout} className="btn btn-link">
               Sair
             </button>
           </>
-        ) : (
-          <Link
-            className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
-            to="/login"
-          >
-            Entrar
-          </Link>
-        )}
+        ) : null}
+        <Link className="buttonHome" to="/">
+          <i className="fas fa-home"></i>
+        </Link>
       </div>
     </nav>
   );

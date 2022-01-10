@@ -9,7 +9,7 @@ function ProtectedRoute({ component: Component }) {
   if (loggedInUser.user._id) {
     return <Component />;
   } else {
-    return <Navigate to="/login" />;
+    return <Navigate to="/permission" />;
   }
 }
 

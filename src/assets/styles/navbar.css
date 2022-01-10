@@ -3,22 +3,36 @@
   font-family: "Abril Fatface", cursive;
   text-align: center;
   color: rgb(253, 253, 253);
-  margin-left: 30%;
+  margin-left: 40%;
   word-spacing: 15px;
+  position: absolute;
 }
-.Links {
-  margin-left: -150%;
-}
+
 .navbar {
   background-color: rgb(105, 3, 105);
   height: 95px;
 }
-.navbar-nav {
-  margin-bottom: 0;
-  margin-left: -950%;
-  list-style: none;
-  align-content: stretch;
-  justify-content: space-around;
-  align-items: stretch;
-  margin-left: -868%;
+
+.buttonA {
+  margin-left: 2%;
+  margin-top: -2%;
+  position: absolute;
+}
+.buttonB {
+  margin-left: 2%;
+  margin-top: 3%;
+  position: absolute;
+}
+.buttonC {
+  margin-left: -95%;
+}
+.boasvindas {
+  color: antiquewhite;
+  margin-left: 1244px;
+}
+.buttonChat {
+  margin-left: -12%;
+  margin-top: 2%;
+  position: absolute;
+  font-size: 25px;
 }
