@@ -29,6 +29,9 @@ function NavbarPaginas() {
         <Link className="buttonHome" to="/">
           <i className="fas fa-home"></i>
         </Link>
+        <Link className="buttonChat" to="/chat-room">
+          Bate Papo
+        </Link>
       </div>
     </nav>
   );
