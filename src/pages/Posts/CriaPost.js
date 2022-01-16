@@ -65,7 +65,7 @@ function PostCreate() {
 
           <FormField
             label="Idade"
-            id="productFormManufacturer"
+            id="idade"
             name="idade"
             onChange={handleChange}
             value={posts.idade}
@@ -111,7 +111,7 @@ function PostCreate() {
                   <span>Carregando...</span>{" "}
                 </>
               ) : (
-                "Criar "
+                "Criar"
               )}
             </button>
           </div>

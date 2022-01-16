@@ -61,76 +61,70 @@ function EditPost(props) {
   }
 
   return (
-    <div className="w-50 d-flex flex-column m-auto">
+    <>
+      <NavbarPaginas />
       <h1 className="text-center mt-5 mb-4">Editar Post</h1>
 
       <form onSubmit={handleSubmit}>
-        <FormField
-          label="NickName"
-          id="sobrenome"
-          required
-          name="nickName"
-          onChange={handleChange}
-          value={userData.nickName}
-          readOnly={loading}
-        />
+        <div className="container">
+          <FormField
+            label="NickName"
+            id="postFormName"
+            required
+            name="nickName"
+            onChange={handleChange}
+            value={userData.nickName}
+            readOnly={loading}
+          />
 
-        <FormField
-          type="text"
-          label="Idade"
-          id="idade"
-          required
-          name="idade"
-          onChange={handleChange}
-          value={userData.idade}
-          readOnly={loading}
-        />
+          <FormField
+            label="Idade"
+            id="idade"
+            required
+            name="idade"
+            onChange={handleChange}
+            value={userData.idade}
+            readOnly={loading}
+          />
 
-        <FormField
-          type="text"
-          label="Estado"
-          id="estado"
-          required
-          name="estado"
-          onChange={handleChange}
-          value={userData.estado}
-          readOnly={loading}
-        />
-
-        <FormField
-          type="text"
-          label="Cidade"
-          id="cidade"
-          required
-          name="cidade"
-          onChange={handleChange}
-          value={userData.cidade}
-          readOnly={loading}
-        />
-        <FormField
-          type="textarea"
-          label="Descricao"
-          id="cidade"
-          required
-          name="descricao"
-          onChange={handleChange}
-          value={userData.descricao}
-          readOnly={loading}
-        />
-        <div className="mb-3 text-end">
-          <button disabled={loading} type="submit" className="btn btn-primary">
-            {loading ? (
-              <span
-                className="spinner-border spinner-border-sm me-2"
-                role="status"
-                aria-hidden="true"
-              ></span>
-            ) : null}
-            AtualizarPost
-          </button>
+          <FormField
+            type="text"
+            label="Estado"
+            id="postEstado"
+            required
+            name="estado"
+            onChange={handleChange}
+            value={userData.estado}
+            readOnly={loading}
+          />
+          <div className="descricao">
+            <textArea
+              label="Conteudo"
+              id="textConteudo"
+              name="descricao"
+              cols={133}
+              rows={15}
+              onChange={handleChange}
+              value={userData.descricao}
+              readOnly={loading}
+            />
+          </div>
+          <div className="container"></div>
+          <div>
+            <button disabled={loading} type="submit" className="botaoCriar">
+              {loading ? (
+                <span
+                  className="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+              ) : null}
+              AtualizarPost
+            </button>
+          </div>
         </div>
       </form>
-    </div>
+    </>
   );
 }
 
