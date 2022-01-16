@@ -22,9 +22,11 @@ function Navbar() {
             <span className="boasvindas">
               Bem-vindo, {loggedInUser.user.name}
             </span>
-            <button onClick={logout} className="btn btn-link" id="botaoSair">
-              Sair
-            </button>
+            <div className="botaoSair">
+              <button onClick={logout} className="btn btn-link">
+                Sair
+              </button>
+            </div>
           </>
         ) : null}
         <Link className="buttonChat" to="/chat-room">
