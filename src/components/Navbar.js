@@ -22,7 +22,7 @@ function Navbar() {
             <span className="boasvindas">
               Bem-vindo, {loggedInUser.user.name}
             </span>
-            <button onClick={logout} className="btn btn-link">
+            <button onClick={logout} className="btn btn-link" id="botaoSair">
               Sair
             </button>
           </>
