@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
 import api from "../../apis/api";
 import FormField from "../../components/forms/FormField";
+import "../../assets/styles/criaPost.css";
 
 function EditPost(props) {
   const [userData, setUserData] = useState({
@@ -62,7 +62,7 @@ function EditPost(props) {
 
   return (
     <div className="w-50 d-flex flex-column m-auto">
-      <h1 className="text-center mt-5 mb-4">Editar cadastro</h1>
+      <h1 className="text-center mt-5 mb-4">Editar Post</h1>
 
       <form onSubmit={handleSubmit}>
         <FormField

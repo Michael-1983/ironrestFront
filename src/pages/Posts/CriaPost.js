@@ -89,8 +89,8 @@ function PostCreate() {
               label="Conteudo"
               id="textConteudo"
               name="descricao"
-              cols={84}
-              rows={4}
+              cols={133}
+              rows={15}
               onChange={handleChange}
               value={posts.descricao}
               required
