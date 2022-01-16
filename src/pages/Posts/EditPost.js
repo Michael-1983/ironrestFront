@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import api from "../../apis/api";
 import FormField from "../../components/forms/FormField";
 import "../../assets/styles/criaPost.css";
+import NavbarPaginas from "../../components/NavbarPaginas";
 
 function EditPost(props) {
   const [userData, setUserData] = useState({
