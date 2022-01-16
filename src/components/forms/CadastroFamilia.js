@@ -40,10 +40,7 @@ function CadastroFamilia(props) {
 
     try {
       setLoading(false);
-      const response = await api.post(
-        "http://localhost:4000/api/cadastra-familia",
-        familia
-      );
+      const familia = await api.post("/cadastra-familia", familia);
       setLoading(false);
       navigate("/");
     } catch (err) {

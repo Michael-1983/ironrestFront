@@ -43,10 +43,7 @@ function CadastroVitma(props) {
 
     try {
       setLoading(false);
-      const response = await api.post(
-        "http://localhost:4000/api/cadastra-vitma",
-        state
-      );
+      const response = await api.post("/cadastra-vitma", state);
       console.log(response);
 
       setLoading(true);
