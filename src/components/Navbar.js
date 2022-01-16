@@ -16,13 +16,13 @@ function Navbar() {
         Disfarce
       </a>
 
-      <div className="botaoSair">
+      <div>
         {loggedInUser.user._id ? (
           <>
             <span className="boasvindas">
               Bem-vindo, {loggedInUser.user.name}
             </span>
-            <div>
+            <div className="botaoSair">
               <button onClick={logout} className="btn btn-link">
                 Sair
               </button>
