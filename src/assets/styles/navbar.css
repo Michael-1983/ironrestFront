@@ -27,9 +27,10 @@
   margin-left: -95%;
 }
 .boasvindas {
-  color: #faebd7;
-  margin-left: 1207px;
-  margin-top: -10px;
+  margin-left: 83%;
+  margin-top: -1%;
+  position: absolute;
+  font-size: 25px;
 }
 .buttonChat {
   margin-left: 83%;
@@ -38,5 +39,6 @@
   font-size: 25px;
 }
 .botaoSair {
-  margin-top: -2%;
+  margin-top: 0%;
+  margin-left: 1430px;
 }
