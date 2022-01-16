@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../contexts/authContext";
 import "../assets/styles/navbarPaginas.css";
+import NavbarPaginas from "./NavbarPaginas";
 
 function NavbarPaginas() {
   const { loggedInUser, logout } = useContext(AuthContext);
