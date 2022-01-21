@@ -7,10 +7,11 @@
   margin-bottom: 1%;
 }
 .card {
-  color: #a50b9d;
+  margin-left: 2%;
+  margin-bottom: 1%;
+  color: rgb(165, 11, 157);
   background-color: rgba(241, 149, 241, 0.863);
   border-radius: 2%;
-  justify-content: center;
 }
 .editar {
   color: #fff;
