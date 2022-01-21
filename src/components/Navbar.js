@@ -7,7 +7,7 @@ function Navbar() {
   const { loggedInUser, logout } = useContext(AuthContext);
   return (
     <nav className="navbar">
-      <h1 className="Titulo">Marias da Penha</h1>
+      <h1 className="Titulo">Mulheres Solidárias</h1>
 
       <Link className="buttonA" to="/sobre">
         Sobre
@@ -27,11 +27,11 @@ function Navbar() {
                 Sair
               </button>
             </div>
+            <Link className="buttonChat" to="/chat-room">
+              Bate Papo
+            </Link>
           </>
         ) : null}
-        <Link className="buttonChat" to="/chat-room">
-          Bate Papo
-        </Link>
       </div>
     </nav>
   );

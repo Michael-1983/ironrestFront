@@ -89,6 +89,7 @@ function PostCreate() {
               label="Conteudo"
               id="textConteudo"
               name="descricao"
+              maxlength="314"
               cols={133}
               rows={15}
               onChange={handleChange}

@@ -28,6 +28,7 @@ function App() {
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/cadastro-post" element={<CriaPost />} />
           <Route path="/chat-room" element={<AppChat />} />
+
           <Route
             path="/editar-post/:id"
             element={<ProtectedRoute component={EditPost} />}

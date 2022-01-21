@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import api from "../../apis/api";
 import FormField from "./FormField";
 import NavbarPaginas from "../NavbarPaginas";
+import "../../assets/styles/cadastroFamilia.css";
 
 function CadastroFamilia(props) {
   const [familia, setFamilia] = useState({
@@ -40,7 +41,7 @@ function CadastroFamilia(props) {
 
     try {
       setLoading(false);
-      const familia = await api.post("/cadastra-familia", familia);
+      const familia = await api.post("http:/cadastra-familia", familia);
       setLoading(false);
       navigate("/");
     } catch (err) {
@@ -56,10 +57,10 @@ function CadastroFamilia(props) {
 
   return (
     // cadastrando as familias que vão ajudar as vitmas
-    <div className="backgroundHome">
+    <div className="backgroundCadastro">
       <NavbarPaginas />
       <div className="container">
-        <h1>Ajude as vitmas de violência doméstica</h1>
+        <h1 className="cadastro">Ajude as vitmas de violência doméstica</h1>
 
         <form onSubmit={handleSubmit}>
           <FormField
@@ -146,11 +147,7 @@ function CadastroFamilia(props) {
             readOnly={loading}
           />
 
-          <button
-            disabled={loading}
-            className="btn btn-danger mt-3"
-            type="submit"
-          >
+          <button disabled={loading} className="SubmeterCadastro" type="submit">
             {loading ? (
               <span
                 className="spinner-border spinner-border-sm me-2"

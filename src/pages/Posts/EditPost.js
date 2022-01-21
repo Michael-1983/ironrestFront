@@ -105,6 +105,7 @@ function EditPost(props) {
               name="descricao"
               cols={133}
               rows={15}
+              maxlength="314"
               onChange={handleChange}
               value={userData.descricao}
               readOnly={loading}

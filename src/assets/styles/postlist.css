@@ -68,7 +68,8 @@
   font-size: 32px;
   position: absolute;
   font-style: italic;
-  width: 1062px;
+  width: 1030px;
+  padding-right: 113px;
 }
 p.card-text:before,
 p.card-text:after {

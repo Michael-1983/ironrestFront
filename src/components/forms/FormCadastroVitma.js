@@ -61,7 +61,7 @@ function CadastroVitma(props) {
   }
 
   return (
-    <div className="backgroundHome">
+    <div className="backgroundCadastro">
       <NavbarPaginas />
       <div className="container">
         {/* cadastrando a vitma no sistema */}

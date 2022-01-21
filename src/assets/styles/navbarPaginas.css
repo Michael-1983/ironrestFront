@@ -3,7 +3,7 @@
   font-family: "Abril Fatface", cursive;
   text-align: center;
   color: rgb(253, 253, 253);
-  margin-left: 40%;
+  margin-left: 35%;
   word-spacing: 15px;
   position: absolute;
 }
@@ -20,7 +20,7 @@
 }
 .buttonB {
   margin-left: 2%;
-  margin-top: 3%;
+  margin-top: 4%;
   position: absolute;
 }
 
@@ -28,11 +28,21 @@
   margin-left: 83%;
   margin-top: -1%;
   position: absolute;
-  font-size: 22px;
+  font-size: 16px;
+  color: white;
 }
+
 .buttonChat {
   margin-left: 83%;
-  margin-top: -1%;
+  margin-top: 1%;
   position: absolute;
   font-size: 25px;
+}
+.icone {
+  width: 500px;
+}
+.botaoSair {
+  margin-top: 16px;
+  margin-left: 1430px;
+  position: absolute;
 }
